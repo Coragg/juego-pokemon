@@ -3,7 +3,7 @@ from datos_pokemo import estadisticas
 turno=0
 
 
-primer_pokemo = info_poke.DatosBasico("Pikachu", 125, 40)
+primer_pokemo = info_poke.DatosBasico("Pikachu", 125, 100)
 segundo_pokemom = info_poke.DatosBasico("Chakka", 200, 35)
 
 print(primer_pokemo.hp)
