@@ -1,2 +1,2 @@
 print("wenas")
-print("holi")
+print("como estan")
