@@ -7,8 +7,10 @@ primer_pokemo = info_poke.DatosBasico("Pikachu", 125, 45)
 segundo_pokemom = info_poke.DatosBasico("Chakka", 200, 35)
 #demo de combate
 while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
+    print(primer_pokemo.get_hp())
+    print(segundo_pokemom.get_hp())
     if turno == 0:
-        #turno de Chkka
+        #turno de Chakka
         ataque = segundo_pokemom.damages
         primer_pokemo.set_dagno_recibido(ataque)
         print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp())
