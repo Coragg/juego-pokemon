@@ -1,6 +1,6 @@
 class DatosBasico:
     name_pokemon: str
-    tipos: list
+    tipo_de_pokemon: list
     hp: int
     damages: int
     level: int
@@ -15,8 +15,14 @@ class DatosBasico:
     def set_hp(self, vida):
         self.hp = vida
 
-    def get_hp(self, vida):
-        return vida
+    def get_hp(self):
+        return self.hp
+
+    def set_dagno_recibido(self, dagno):
+        self.hp -= dagno
+
+    def get_dagno_recibido(self):
+        return self.hp
 
 
 
