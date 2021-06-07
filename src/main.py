@@ -27,7 +27,7 @@ while(primer_pokemo.get_hp()>0 and segundo_pokemom.get_hp()>0):
         segundo_pokemom.set_dagno_recibido(40)
         print("Chakka:",segundo_pokemom.get_hp())
         if(segundo_pokemom.get_hp()<=0):
-            print("Chakka ha sido eliminado")
+            print("Chakka ha sido debilitado")
             break
         else:
             turno=turno-1
