@@ -25,8 +25,9 @@ while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
             turno += 1
     if(turno==1):
         #turno de pikachu
-        segundo_pokemom.set_dagno_recibido(40)
-        print("Chakka:",segundo_pokemom.get_hp())
+        ataque = primer_pokemo.damages
+        segundo_pokemom.set_dagno_recibido(ataque)
+        print("Chakka:", segundo_pokemom.get_hp())
         if(segundo_pokemom.get_hp()<=0):
             print("Chakka ha sido debilitado")
             break
