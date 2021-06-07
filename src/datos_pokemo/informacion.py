@@ -18,6 +18,10 @@ class DatosBasico:
     def get_hp(self):
         return self.hp
 
+    def get_damages(self):
+        return self.damages
+
+
     def set_dagno_recibido(self, dagno):
         self.hp -= dagno
 
