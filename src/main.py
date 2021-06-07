@@ -11,19 +11,16 @@ while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
         #turno de Chkka
         ataque = segundo_pokemom.damages
         primer_pokemo.set_dagno_recibido(ataque)
-        print("pikachu:", primer_pokemo.get_hp())
-        if(primer_pokemo.get_hp()<=0):
-            print("Pikachu ha sido debilitado")
-            break
-        else:
-            turno += 1
+        print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp())
+        turno += 1
     if turno == 1:
         #turno de pikachu
         ataque = primer_pokemo.damages
         segundo_pokemom.set_dagno_recibido(ataque)
-        print("Chakka:", segundo_pokemom.get_hp())
-        if(segundo_pokemom.get_hp()<=0):
-            print("Chakka ha sido debilitado")
-            break
-        else:
-            turno-= 1
+        print(f"{segundo_pokemom.name_pokemon}:", segundo_pokemom.get_hp())
+        turno -= 1
+
+if primer_pokemo.hp <= 0:
+    print(f"{primer_pokemo.name_pokemon} ha sido debilitado")
+else:
+    print(f"{segundo_pokemom.name_pokemon} ha sido debilitado")
