@@ -29,6 +29,17 @@ print("\tVelociodad =")
 
 
 print("\nMovimientos que puede aprender el pokémon: ")
+print("")
+seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
+
+print(f"El ataque seleccionado es:  {seleccionar_ataque}")
+print(f"El hp al nivel {None} de  {primer_pokemo.name_pokemon}  es  {None}")
+print(f"El atk al nivel {None} de  {primer_pokemo.name_pokemon}  es  {None}")
+print(f"El def al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
+print(f"El spa al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
+print(f"El spd al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
+print(f"El spe al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
+
 
 
 
