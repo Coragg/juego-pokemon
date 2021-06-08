@@ -3,16 +3,12 @@ class CaracteristicasPokemon:
     tipo_de_pokemon: str
     hp: int
     damages: int
-    level: int
     velocidad: int
-    velodidad_de_ataque = int
 
     def __init__(self, name, helth_point, damages):
         self.name_pokemon = name
         self.hp = helth_point
         self.damages = damages
-
-
 
     def get_hp(self):
         return self.hp
@@ -38,8 +34,6 @@ class CaracteristicasPokemon:
     def get_velocidad(self):
         return self.velocidad
 
-    def set_velocidad_de_ataque(self, velocidad):
-        self.set_velocidad_de_ataque = velocidad
 
 
 

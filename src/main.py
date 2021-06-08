@@ -8,6 +8,7 @@ segundo_pokemom = info_poke.CaracteristicasPokemon("Chakka", 200, 35)
 print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
       segundo_pokemom.get_hp())
 
+
 while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
     if turno == 0:
         #turno del primer
