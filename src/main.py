@@ -4,13 +4,13 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 
 # Anibal
 
-print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-print(":Bienvenido al simulador de combate pokemon profesional, aqui podra probar los daños que llegaria a hacer un pokemon profesional a otro           :")
-print(":Lo que debe hacer joven entrenador es: Elegir un pokemon de primera a septima generacion, el simulador te mostrara sus estadisisticas            :")
-print(":Despues tendras que elegir una habilidad que puede usar ese pokemon, despues te mostrara las estadisticas de un pokemon de categoria profesional :")
-print(":Acto seguido eligiras un pokemon para que reciba el ataque, el cual va a mostrar su estadistica de vida en modo profesional, tu pokemon          :")
-print(":Atacara al otro mostrando el daño que harian teoricamente 2 pokemones profesionales en una lucha real                                            :")
-print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+print("::Bienvenido al simulador de combate pokemon profesional, aqui podra probar los daños que llegaria a hacer un pokemon profesional a otro           ::")
+print("::Lo que debe hacer joven entrenador es: Elegir un pokemon de primera a septima generacion, el simulador te mostrara sus estadisisticas            ::")
+print("::Despues tendras que elegir una habilidad que puede usar ese pokemon, despues te mostrara las estadisticas de un pokemon de categoria profesional ::")
+print("::Acto seguido eligiras un pokemon para que reciba el ataque, el cual va a mostrar su estadistica de vida en modo profesional, tu pokemon          ::")
+print("::Atacara al otro mostrando el daño que harian teoricamente 2 pokemones profesionales en una lucha real                                            ::")
+print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
 primer_poke = input("Elija su pokemon:   ")
 ataque = input("Elija su ataque:    ")
 segundo_poke = input("Elija el pokemon a atacar:   ")
