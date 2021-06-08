@@ -11,11 +11,11 @@ print(":Despues tendras que elegir una habilidad que puede usar ese pokemon, des
 print(":Acto seguido eligiras un pokemon para que reciba el ataque, el cual va a mostrar su estadistica de vida en modo profesional, tu pokemon          :")
 print(":Atacara al otro mostrando el daño que harian teoricamente 2 pokemones profesionales en una lucha real                                            :")
 print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-primer_poke=input("Elija su pokemon:   ")
-ataque=input("Elija su ataque:    ")
-segundo_poke=input("Elija el pokemon a atacqr:   ")
-primer_pokemo = info_poke.CaracteristicasPokemon("Pikachu", 125, 45)
-segundo_pokemom = info_poke.CaracteristicasPokemon("Chakka", 200, 35)
+primer_poke = input("Elija su pokemon:   ")
+ataque = input("Elija su ataque:    ")
+segundo_poke = input("Elija el pokemon a atacar:   ")
+primer_pokemo = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
+segundo_pokemom = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
 
 
 # victor
