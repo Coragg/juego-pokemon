@@ -10,13 +10,13 @@ print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo
 
 while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
     if turno == 0:
-        #turno de Chakka
+        #turno del primer
         ataque = segundo_pokemom.damages
         primer_pokemo.set_dagno_recibido(ataque)
         print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp())
         turno += 1
     if turno == 1:
-        #turno de pikachu
+        #turno de pokemon
         ataque = primer_pokemo.damages
         segundo_pokemom.set_dagno_recibido(ataque)
         print(f"{segundo_pokemom.name_pokemon}:", segundo_pokemom.get_hp())
