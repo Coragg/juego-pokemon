@@ -1,14 +1,14 @@
-from datos_pokemo import informacion as info_poke
-from datos_pokemo import estadisticas
+from datos_pokemo import caracteristicas_pokemon as info_poke
+# from datos_pokemo import estadisticas
+
 turno = 0
-
-
-primer_pokemo = info_poke.DatosBasico("Pikachu", 125, 45)
-segundo_pokemom = info_poke.DatosBasico("Chakka", 200, 35)
+primer_pokemo = info_poke.CaracteristicasPokemon("Pikachu", 125, 45)
+segundo_pokemom = info_poke.CaracteristicasPokemon("Chakka", 200, 35)
 #demo de combate
+print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
+      segundo_pokemom.get_hp())
+
 while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
-    print(primer_pokemo,primer_pokemo.get_hp())
-    print(segundo_pokemom,segundo_pokemom.get_hp())
     if turno == 0:
         #turno de Chakka
         ataque = segundo_pokemom.damages
@@ -26,3 +26,5 @@ if primer_pokemo.hp <= 0:
     print(f"{primer_pokemo.name_pokemon} ha sido debilitado")
 else:
     print(f"{segundo_pokemom.name_pokemon} ha sido debilitado")
+
+

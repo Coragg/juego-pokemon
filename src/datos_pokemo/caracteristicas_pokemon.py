@@ -1,4 +1,4 @@
-class DatosBasico:
+class CaracteristicasPokemon:
     name_pokemon: str
     tipo_de_pokemon: str
     hp: int
@@ -11,6 +11,8 @@ class DatosBasico:
         self.name_pokemon = name
         self.hp = helth_point
         self.damages = damages
+
+
 
     def get_hp(self):
         return self.hp
