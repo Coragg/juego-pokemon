@@ -3,6 +3,7 @@ class CaracteristicasPokemon:
     tipo_de_pokemon: str
     hp: eval
     damages: eval
+    level: int
     velocidad: eval
     defensa: eval
 
@@ -39,6 +40,9 @@ class CaracteristicasPokemon:
     def get_defensa(self):
         return self.defensa
 
+
+    def get_nivel(self):
+        return self.level
 
 
 
