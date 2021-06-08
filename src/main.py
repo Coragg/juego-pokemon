@@ -15,9 +15,20 @@ primer_pokemo = info_poke.CaracteristicasPokemon("Pikachu", 125, 45)
 segundo_pokemom = info_poke.CaracteristicasPokemon("Chakka", 200, 35)
 
 
-
-
 # victor
+print("Estadisticas bases del pokémon: ")
+print("\tHP =", primer_pokemo.hp)
+print("\tAtaque =", primer_pokemo.get_damages())
+print("\tDefensa = ")
+print("\tAtaque especial =")
+print("\tDefensa especial =")
+print("\tVelociodad =")
+
+
+print("\nMovimientos que puede aprender el pokémon: ")
+
+
+
 
 
 
