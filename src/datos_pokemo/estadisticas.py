@@ -8,7 +8,7 @@ def HP(Base):
 
 def OtherStat(Base):
     Level, IV, EV = 50, 31, 250
-    otherstat = 0
+    otherstat = (((((Base+IV)*2)+((math.sqrt(EV))/4))*Level)/100) + 5
     return otherstat
 
 def Modifier(Type,STAB):
