@@ -13,6 +13,7 @@ print(":Atacara al otro mostrando el daño que harian teoricamente 2 pokemones p
 print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
 primer_poke=input("Elija su pokemon:   ")
 ataque=input("Elija su ataque:    ")
+segundo_poke=input("Elija el pokemon a atacqr:   ")
 primer_pokemo = info_poke.CaracteristicasPokemon("Pikachu", 125, 45)
 segundo_pokemom = info_poke.CaracteristicasPokemon("Chakka", 200, 35)
 
