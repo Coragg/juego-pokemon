@@ -1,7 +1,6 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
 # from datos_pokemo import estadisticas
 
-
 # Anibal
 
 print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
@@ -17,12 +16,12 @@ print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 primer_poke = input("Elija su pokemon:   ")
 ataque = input("Elija su ataque:    ")
 
-primer_pokemo = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
+primer_pokemon = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
 
 # victor
 print("Estadisticas bases del pokémon: ")
-print("\tHP =", primer_pokemo.hp)
-print("\tAtaque =", primer_pokemo.get_damages())
+print("\tHP =", primer_pokemon.hp)
+print("\tAtaque =", primer_pokemon.get_damages())
 print("\tDefensa = ")
 print("\tAtaque especial =")
 print("\tDefensa especial =")
@@ -33,19 +32,20 @@ print("")
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")
-print(f"El hp al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
-print(f"El atk al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
-print(f"El def al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
-print(f"El spa al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
-print(f"El spd al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
-print(f"El spe al nivel {None} de {primer_pokemo.name_pokemon} es {None}")
+print(f"El hp al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El atk al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El def al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El spa al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El spd al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El spe al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
 
 segundo_poke = input("Nombre del Pokémon seleccionado:   ")
 segundo_pokemom = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
 print(f"El hp al nivel {None} de  Absol  es {None}")
-print(f"El daño que realizó  {primer_pokemo.name_pokemon}  a  {segundo_pokemom.name_pokemon}  fue de: {None}")
+print(f"El daño que realizó  {primer_pokemon.nombre_pokemon}  a  {segundo_pokemom.nombre_pokemon}  fue de: {None}")
 
-print(f"{segundo_pokemom.name_pokemon} quedó con un HP de: {None}")
+print(f"{segundo_pokemom.nombre_pokemon} quedó con un HP de: {None}")
+
 
 
 #demo de combate

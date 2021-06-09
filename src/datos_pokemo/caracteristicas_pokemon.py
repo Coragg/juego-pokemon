@@ -1,5 +1,5 @@
 class CaracteristicasPokemon:
-    name_pokemon: str
+    nombre_pokemon: str
     tipo_de_pokemon: str
     hp: eval
     damages: eval
@@ -7,10 +7,9 @@ class CaracteristicasPokemon:
     velocidad: eval
     defensa: eval
 
-
-    def __init__(self, name, helth_point, damages):
-        self.name_pokemon = name
-        self.hp = helth_point
+    def __init__(self, name, health_point, damages):
+        self.nombre_pokemon = name
+        self.hp = health_point
         self.damages = damages
 
     def get_hp(self):
