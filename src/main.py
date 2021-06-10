@@ -5,7 +5,7 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
-print("::Bienvenido al simulador de combate pokemon profesional, aqui podra probar los daños que llegaria a hacer un "
+print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
       "pokemon profesional a otro           ::")
 print("::Lo que debe hacer joven entrenador es: Elegir un pokemon de primera a septima generacion, el simulador te "
       "mostrara sus estadisisticas            ::")
@@ -30,7 +30,7 @@ primer_pokemon = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
 
 # victor
 print("Estadisticas bases del pokémon: ")
-print("\thealth_point =", primer_pokemon.hp)
+print("\thp =", primer_pokemon.get_hp())
 print("\tAtaque =", primer_pokemon.get_attack())
 print("\tDefensa = ")
 print("\tAtaque especial =")
@@ -42,19 +42,19 @@ print("")
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")
-print(f"El health_point al nivel {None} de {primer_pokemon.name} es {None}")
-print(f"El atk al nivel {None} de {primer_pokemon.name} es {None}")
-print(f"El def al nivel {None} de {primer_pokemon.name} es {None}")
-print(f"El spa al nivel {None} de {primer_pokemon.name} es {None}")
-print(f"El spd al nivel {None} de {primer_pokemon.name} es {None}")
-print(f"El spe al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El hp al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+print(f"El atk al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+print(f"El def al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 
 segundo_poke = input("Nombre del Pokémon seleccionado:   ")
-segundo_pokemom = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
-print(f"El health_point al nivel {None} de  Absol  es {None}")
-print(f"El daño que realizó  {primer_pokemon.name}  a  {segundo_pokemom.name}  fue de: {None}")
+segundo_pokemon = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
+print(f"El hp al nivel {segundo_pokemon.get_level()} de  {segundo_pokemon.get_name()}  es {None}")
+print(f"El daño que realizó  {primer_pokemon.get_name()}  a  {segundo_pokemon.get_name()}  fue de: {None}")
 
-print(f"{segundo_pokemom.name} quedó con un health_point de: {None}")
+print(f"{segundo_pokemon.name} quedó con un health_point de: {None}")
 
 
 

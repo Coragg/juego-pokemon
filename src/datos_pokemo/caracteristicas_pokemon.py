@@ -3,7 +3,7 @@ class CaracteristicasPokemon:
     class_pokemon: str
     hp: eval
     attack: eval
-    level: int
+    level = 50
     velocity: eval
     defense: eval
 
@@ -14,6 +14,12 @@ class CaracteristicasPokemon:
 
     def get_hp(self):
         return self.hp
+
+    def set_name(self, name: str):
+        self.name = name
+
+    def get_name(self):
+        return self.name
 
     def set_attack(self, damages):
         self.attack = damages
