@@ -1,24 +1,27 @@
 import random
 import math
 
-def HP(Base):
-    Level, IV, EV = 50, 31, 250
-    hp = (((((Base+IV)*2)+((math.sqrt(EV))/4))*Level)/100) + Level + 10
+
+def health_point(base):
+    level, iv, ev = 50, 31, 250
+    hp = (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + level + 10
     return hp
 
-def OtherStat(Base):
-    Level, IV, EV = 50, 31, 250
-    otherstat = (((((Base+IV)*2)+((math.sqrt(EV))/4))*Level)/100) + 5
-    return otherstat
 
-def Modifier(Type,STAB):
-    rando= random.uniform(0.85,1)
-    mofifier= Type * STAB * rando * 1
-    return round(mofifier,2)
+def other_stat(base):
+    level, iv, ev = 50, 31, 250
+    calculate_other_stat = (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + 5
+    return calculate_other_stat
 
 
-def Damage(Power):
-    Level=50
-    modificar= Modifier(1,2)
-    A= 5
-    D= 4
+def modifier(type_pokemon, stab):
+    random_decimal = random.uniform(0.85, 1)
+    calculate_modifier = type_pokemon * stab * random_decimal * 1
+    return round(calculate_modifier, 2)
+
+
+def damages(power):
+    level = 50
+    use_modifier = modifier(1, 2)
+    a = 5
+    b = 4

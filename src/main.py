@@ -3,25 +3,35 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 
 # Anibal
 
-print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-print("::Bienvenido al simulador de combate pokemon profesional, aqui podra probar los daños que llegaria a hacer un pokemon profesional a otro           ::")
-print("::Lo que debe hacer joven entrenador es: Elegir un pokemon de primera a septima generacion, el simulador te mostrara sus estadisisticas            ::")
-print("::Despues tendras que elegir una habilidad que puede usar ese pokemon, despues te mostrara las estadisticas de un pokemon de categoria profesional ::")
-print("::Acto seguido eligiras un pokemon para que reciba el ataque, el cual va a mostrar su estadistica de vida en modo profesional, tu pokemon          ::")
-print("::Atacara al otro mostrando el daño que harian teoricamente 2 pokemones profesionales en una lucha real                                            ::")
-print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-print("::Reglas profecionales: Pokeones a nivel 50, IV=31 en cada estadistica, Ev=250 Total en estadisticas, dependiendo la temporada                     ::")
-print("::Se permiten el uso de pokemones legendarios, pero si miticos y singularares.                                               Disfrute el simulador ::")
-print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+      ":::::::::::::::::::::::::::::::::::::")
+print("::Bienvenido al simulador de combate pokemon profesional, aqui podra probar los daños que llegaria a hacer un "
+      "pokemon profesional a otro           ::")
+print("::Lo que debe hacer joven entrenador es: Elegir un pokemon de primera a septima generacion, el simulador te "
+      "mostrara sus estadisisticas            ::")
+print("::Despues tendras que elegir una habilidad que puede usar ese pokemon, despues te mostrara las estadisticas de "
+      "un pokemon de categoria profesional ::")
+print("::Acto seguido eligiras un pokemon para que reciba el ataque, el cual va a mostrar su estadistica de vida en "
+      "modo profesional, tu pokemon          ::")
+print("::Atacara al otro mostrando el daño que harian teoricamente 2 pokemones profesionales en una lucha real         "
+      "                                   ::")
+print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+      ":::::::::::::::::::::::::::::::::::::")
+print("::Reglas profecionales: Pokeones a nivel 50, IV=31 en cada estadistica, Ev=250 Total en estadisticas, "
+      "dependiendo la temporada                     ::")
+print("::Se permiten el uso de pokemones legendarios, pero si miticos y singularares.                                  "
+      "             Disfrute el simulador ::")
+print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+      ":::::::::::::::::::::::::::::::::::::")
 primer_poke = input("Elija su pokemon:   ")
-ataque = input("Elija su ataque:    ")
+tipo_ataque = input("Elija su ataque:    ")
 
 primer_pokemon = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
 
 # victor
 print("Estadisticas bases del pokémon: ")
-print("\tHP =", primer_pokemon.hp)
-print("\tAtaque =", primer_pokemon.get_damages())
+print("\thealth_point =", primer_pokemon.hp)
+print("\tAtaque =", primer_pokemon.get_attack())
 print("\tDefensa = ")
 print("\tAtaque especial =")
 print("\tDefensa especial =")
@@ -32,23 +42,23 @@ print("")
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")
-print(f"El hp al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
-print(f"El atk al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
-print(f"El def al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
-print(f"El spa al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
-print(f"El spd al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
-print(f"El spe al nivel {None} de {primer_pokemon.nombre_pokemon} es {None}")
+print(f"El health_point al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El atk al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El def al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El spa al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El spd al nivel {None} de {primer_pokemon.name} es {None}")
+print(f"El spe al nivel {None} de {primer_pokemon.name} es {None}")
 
 segundo_poke = input("Nombre del Pokémon seleccionado:   ")
 segundo_pokemom = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
-print(f"El hp al nivel {None} de  Absol  es {None}")
-print(f"El daño que realizó  {primer_pokemon.nombre_pokemon}  a  {segundo_pokemom.nombre_pokemon}  fue de: {None}")
+print(f"El health_point al nivel {None} de  Absol  es {None}")
+print(f"El daño que realizó  {primer_pokemon.name}  a  {segundo_pokemom.name}  fue de: {None}")
 
-print(f"{segundo_pokemom.nombre_pokemon} quedó con un HP de: {None}")
+print(f"{segundo_pokemom.name} quedó con un health_point de: {None}")
 
 
 
-#demo de combate
+# demo de combate
 # print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
 #       segundo_pokemom.get_hp())
 #
@@ -57,19 +67,17 @@ print(f"{segundo_pokemom.nombre_pokemon} quedó con un HP de: {None}")
 #     if turno == 0:
 #         # turno del primer
 #         ataque = segundo_pokemom.damages
-#         primer_pokemo.set_dagno_recibido(ataque)
+#         primer_pokemo.set_damages_received(ataque)
 #         print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp())
 #         turno += 1
 #     if turno == 1:
 #         # turno de pokemon
 #         ataque = primer_pokemo.damages
-#         segundo_pokemom.set_dagno_recibido(ataque)
+#         segundo_pokemom.set_damages_received(ataque)
 #         print(f"{segundo_pokemom.name_pokemon}:", segundo_pokemom.get_hp())
 #         turno -= 1
 #
-# if primer_pokemo.hp <= 0:
+# if primer_pokemo.health_point <= 0:
 #     print(f"{primer_pokemo.name_pokemon} ha sido debilitado")
 # else:
 #     print(f"{segundo_pokemom.name_pokemon} ha sido debilitado")
-
-

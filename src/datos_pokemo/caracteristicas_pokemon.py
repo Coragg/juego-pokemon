@@ -1,47 +1,46 @@
 class CaracteristicasPokemon:
-    nombre_pokemon: str
-    tipo_de_pokemon: str
+    name: str
+    class_pokemon: str
     hp: eval
-    damages: eval
+    attack: eval
     level: int
-    velocidad: eval
-    defensa: eval
+    velocity: eval
+    defense: eval
 
     def __init__(self, name, health_point, damages):
-        self.nombre_pokemon = name
+        self.name = name
         self.hp = health_point
-        self.damages = damages
+        self.attack = damages
 
     def get_hp(self):
         return self.hp
 
-    def get_damages(self):
-        return self.damages
+    def set_attack(self, damages):
+        self.attack = damages
 
-    def set_dagno_recibido(self, dagno):
-        self.hp -= dagno
+    def get_attack(self):
+        return self.attack
 
-    def get_dagno_recibido(self):
-        return self.hp
+    def set_damages_received(self, damages):
+        self.hp -= damages
 
-    def set_tipo_pokemon(self, tipo):
-        self.tipo_de_pokemon = tipo
+    def set_type_pokemon(self, type_pokemon):
+        self.class_pokemon = type_pokemon
 
-    def get_tipo_pokemon(self):
-        return self.tipo_de_pokemon
+    def get_type_pokemon(self):
+        return self.class_pokemon
 
-    def set_velocidad(self, velocidad):
-        self.velocidad = velocidad
+    def set_velocity(self, velocity):
+        self.velocity = velocity
 
-    def get_velocidad(self):
-        return self.velocidad
+    def get_velocity(self):
+        return self.velocity
 
-    def get_defensa(self):
-        return self.defensa
+    def set_defense(self, defending):
+        self.defense = defending
 
+    def get_defense(self):
+        return self.defense
 
-    def get_nivel(self):
+    def get_level(self):
         return self.level
-
-
-
