@@ -3,9 +3,11 @@ class CaracteristicasPokemon:
     class_pokemon: str
     hp: eval
     attack: eval
+    special_attack: int
     level = 50
     velocity: eval
     defense: eval
+    special_defense: eval
 
     def __init__(self, name, health_point, damages):
         self.name = name
@@ -50,3 +52,16 @@ class CaracteristicasPokemon:
 
     def get_level(self):
         return self.level
+
+    def set_special_attack(self, special_attack: int):
+        self.special_attack = special_attack
+
+    def get_special_attack(self):
+        return self.special_attack
+
+    def set_special_defense(self, special_defense):
+        self.special_defense = special_defense
+
+    def get_special_defense(self):
+        return self.special_defense
+
