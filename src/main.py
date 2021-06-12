@@ -1,5 +1,5 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
-# from datos_pokemo import estadisticas
+from src import read_document as leer
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
@@ -21,9 +21,18 @@ print("::Se permiten el uso de pokemones legendarios, pero si miticos y singular
       "             Disfrute el simulador ::")
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
-primer_poke = input("Elija su pokemon: ")
+
+lista = leer.data_of_pokemons()
+nombre_primer_pokemon = input("Elija su pokemon: ")
+buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, lista)
+while buscar_nombre_primer == False:
+      nombre_primer_pokemon = input("Elija su pokemon: ")
+      buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, lista)
+
+
 type_attack = input("Elija su ataque: ")
-primer_pokemon = info_poke.CaracteristicasPokemon(primer_poke, 125, 45)
+
+primer_pokemon = info_poke.CaracteristicasPokemon()
 
 print("Estadisticas bases del pokémon: ")
 print("\thp =", primer_pokemon.get_hp())
@@ -46,7 +55,7 @@ print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name
 print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 
 segundo_poke = input("Nombre del Pokémon seleccionado:   ")
-segundo_pokemon = info_poke.CaracteristicasPokemon(segundo_poke, 200, 35)
+segundo_pokemon = info_poke.CaracteristicasPokemon()
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {None}")
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {None}")
 

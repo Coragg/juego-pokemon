@@ -9,10 +9,10 @@ class CaracteristicasPokemon:
     defense: eval
     special_defense: eval
 
-    def __init__(self, name, health_point, damages):
-        self.name = name
-        self.hp = health_point
-        self.attack = damages
+    # def __init__(self, name, health_point, damages):
+    #     self.name = name
+    #     self.hp = health_point
+    #     self.attack = damages
 
     def get_hp(self):
         return self.hp

@@ -7,19 +7,19 @@ def data_of_pokemons():
         basic_information.append(list_data)
     read_file.close()
     return basic_information
-# print(informacion_salto_linea[0])
 
-# print(data_of_pokemons())
+def buscar_nombre(name: str, nombre_lista: list):
+    posicion = False
+    for x in range(832):
+        if nombre_lista[x][0] == name.lower():
+            posicion += x
+            break
+    return posicion
+data = data_of_pokemons()
 
-informacion = data_of_pokemons()
-# print(type(informacion[0][8]))
-
-informacion.index("Juan")
-# print(informacion[1][0])
-# cortar = informacion[1][8].split(sep=";")
-# print(cortar)
-# for recorer in cortar:
-#     print(recorer)
-
+cortar = data[0][8].split(sep=";")
+print(cortar)
+for recorer in cortar:
+    print(recorer)
 
 
