@@ -60,11 +60,28 @@ print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name
 print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 
 segundo_poke = input("Nombre del Pokémon seleccionado:   ")
+search_second_pokemon = leer.buscar_nombre(segundo_poke, data_pokemon)
+while search_second_pokemon == False:
+      segundo_poke = input("Elija su pokemon: ")
+      search_second_pokemon = leer.buscar_nombre(segundo_poke, data_pokemon)
+
 segundo_pokemon = info_poke.CaracteristicasPokemon()
+segundo_pokemon.set_name(data_pokemon[search_second_pokemon][0])
+segundo_pokemon.set_hp(data_pokemon[search_second_pokemon][2])
+segundo_pokemon.set_attack(data_pokemon[search_second_pokemon][3])
+segundo_pokemon.set_defense(data_pokemon[search_second_pokemon][4])
+segundo_pokemon.set_special_attack(data_pokemon[search_second_pokemon][5])
+segundo_pokemon.set_special_defense(data_pokemon[search_second_pokemon][6])
+segundo_pokemon.set_velocity(data_pokemon[search_second_pokemon][7])
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {None}")
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {None}")
 
 print(f"{segundo_pokemon.name} quedó con un health_point de: {None}")
+
+
+
+
+
 
 # demo de combate
 # print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
