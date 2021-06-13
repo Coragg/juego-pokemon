@@ -22,18 +22,17 @@ print("::Se permiten el uso de pokemones legendarios, pero si miticos y singular
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 
-lista = leer.data_of_pokemons()
+data_pokemon = leer.data_of_pokemons()
 nombre_primer_pokemon = input("Elija su pokemon: ")
-buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, lista)
+buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
 while buscar_nombre_primer == False:
       nombre_primer_pokemon = input("Elija su pokemon: ")
-      buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, lista)
-
-
-type_attack = input("Elija su ataque: ")
+      buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
+primer_pokemon.set_name(data_pokemon[buscar_nombre_primer][0])
 
+print(f"Nombre del Pokémon seleccionado:  {primer_pokemon.get_name()}")
 print("Estadisticas bases del pokémon: ")
 print("\thp =", primer_pokemon.get_hp())
 print("\tAtaque =", primer_pokemon.get_attack())
@@ -43,7 +42,7 @@ print("\tDefensa especial =", primer_pokemon.get_special_defense())
 print("\tVelociodad =", primer_pokemon.get_velocity())
 
 print("\nMovimientos que puede aprender el pokémon: ")
-print("")
+leer.mostrar_habilidades(buscar_nombre_primer, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")

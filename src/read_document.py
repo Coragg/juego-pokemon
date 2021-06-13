@@ -15,11 +15,15 @@ def buscar_nombre(name: str, nombre_lista: list):
             posicion += x
             break
     return posicion
-data = data_of_pokemons()
 
-cortar = data[0][8].split(sep=";")
-print(cortar)
-for recorer in cortar:
-    print(recorer)
+
+data = data_of_pokemons()
+def mostrar_habilidades(posicion_pokemon: int, lista_pokemon: list):
+    cortar = lista_pokemon[posicion_pokemon][8].split(sep=";")
+    recorre = 0
+    for recorrer in cortar:
+        print(f"{recorre} - {recorrer}")
+        recorre += 1
+
 
 
