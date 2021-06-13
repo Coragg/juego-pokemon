@@ -26,9 +26,7 @@ def mostrar_habilidades(posicion_pokemon: int, lista_pokemon: list):
         recorre += 1
 
 
+# buscara una habilidad en la lista genereda por la lectura del archivo
 def buscar_habilidad_seleccionada(posicion_pokemon, posicion_habilidad: int, lista: list):
     cortar = lista[posicion_pokemon][8].split(sep=";")
     return cortar[posicion_habilidad]
-
-
-
