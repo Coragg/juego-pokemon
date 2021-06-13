@@ -20,11 +20,8 @@ def modifier(type_pokemon: eval, stab: eval):
     return round(calculate_modifier, 2)
 
 
-def damages(power, type_pokemon, stab, ataque, defensa_enemigo):
+def damages(power, type_pokemon, stab, attack, enemy_defense):
     level = 50
     use_modifier = modifier(type_pokemon, stab)
-    calculo = (((((2 * level) / 5) + 2) * power * (ataque / defensa_enemigo) / 50) + 2) * use_modifier
-    return calculo
-
-
-
+    calculate = (((((2 * level) / 5) + 2) * power * (attack / enemy_defense) / 50) + 2) * use_modifier
+    return calculate

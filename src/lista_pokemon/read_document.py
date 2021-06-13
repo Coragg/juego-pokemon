@@ -28,20 +28,16 @@ def mostrar_habilidad(posicion_pokemon: int, list_pokemon: list):
 
 
 # buscara una habilidad en la lista genereda por la lectura del archivo
-def buscar_habilidad_seleccionada(posicion_pokemon, posicion_habilidad: int, lista: list):
-    cut = lista[posicion_pokemon][8].split(sep=";")
+def buscar_habilidad_seleccionada(pokemon_position, posicion_habilidad: int, lista: list):
+    cut = lista[pokemon_position][8].split(sep=";")
     return cut[posicion_habilidad]
 
 
-#
+# buscara el daño que le puede hacer un tipo de pokemon a otro tipo de pokemon
 def analizar_efectividad(tipo_pokemon1: str, tipo_pokemon2: str, lista: list):
     posicion_tipo = search_name(tipo_pokemon1, lista, 19)
     buscar = lista[0].index(tipo_pokemon2)
-    return lista[posicion_tipo][buscar]
-
-# data = matriz_de_lectura_de_documento("tabla_efectividad.csv")
-# dd = analizar_efectividad("bug", "rock", data)
-# print(type(dd))
+    return float(lista[posicion_tipo][buscar])
 
 
 def type_attack(tipo_pokemon, tipo_ataque):
@@ -49,9 +45,3 @@ def type_attack(tipo_pokemon, tipo_ataque):
         return 1.2
     else:
         return 1.0
-
-
-
-
-
-
