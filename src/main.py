@@ -58,7 +58,10 @@ seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 
-print(f"El ataque seleccionado es:  {seleccionar_ataque}")
+print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
+
+
+
 print(f"El hp al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 print(f"El atk al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 print(f"El def al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
@@ -86,6 +89,12 @@ print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_nam
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {None}")
 
 print(f"{segundo_pokemon.name} quedó con un hp de: {None}")
+
+
+
+
+
+
 
 
 

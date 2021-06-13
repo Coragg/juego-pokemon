@@ -40,6 +40,13 @@ def analizar_efectividad(tipo_pokemon1: str, tipo_pokemon2: str, lista: list):
     return lista[posicion_tipo][buscar]
 
 
+def type_attack(tipo_pokemon, tipo_ataque):
+    if tipo_pokemon == tipo_ataque:
+        return 1.2
+    else:
+        return 1.0
+
+
 
 
 
