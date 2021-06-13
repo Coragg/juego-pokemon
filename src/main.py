@@ -136,6 +136,43 @@ print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_h
 
 
 
+#prototipo de cambate
+while(primer_pokemon.get_hp()>0 and segundo_pokemon.get_hp()>0):
+      if(primer_pokemon.get_velocity()>segundo_pokemon.get_velocity()):
+            power = informacion_hablidada[1]
+            tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
+                                            tabla_efectivida)
+            stab = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+            atacar_segundo_pokemon = estadisticas.damages(power, tipo_pokemon, stab, primer_pokemon.get_attack(),
+                                                          segundo_pokemon.get_defense())
+            segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
+            print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
+                  f"{atacar_segundo_pokemon}")
+
+            print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+      else:
+            power = informacion_hablidada[1]
+            tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(), primer_pokemon.get_type_pokemon(),
+                                            tabla_efectivida)
+            stab = leer.type_attack(segundo_pokemon.get_type_pokemon(), informacion_hablidada[2])
+            atacar_primer_pokemon = estadisticas.damages(power, tipo_pokemon, stab, segundo_pokemon.get_attack(),
+                                                          primer_pokemon.get_defense())
+            primer_pokemon.set_damages_received(atacar_primer_pokemon)
+            print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
+                  f"{atacar_primer_pokemon}")
+
+            print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
+
+
+
+
+
+
+
+
+
+
+
 
 # demo de combate
 # print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
