@@ -1,7 +1,8 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
-from movimiento import moves
 from datos_pokemo import estadisticas
+from movimiento import moves
+import random
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
@@ -138,7 +139,7 @@ print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_h
 
 #prototipo de cambate
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-      if primer_pokemon.get_velocity()>segundo_pokemon.get_velocity():
+      if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
             power = informacion_hablidada[1]
             tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
                                                      segundo_pokemon.get_type_pokemon(), tabla_efectivida)

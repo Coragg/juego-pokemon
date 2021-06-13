@@ -34,14 +34,23 @@ def buscar_habilidad_seleccionada(pokemon_position, posicion_habilidad: int, lis
 
 
 # buscara el daño que le puede hacer un tipo de pokemon a otro tipo de pokemon
-def analizar_efectividad(tipo_pokemon1: str, tipo_pokemon2: str, lista: list):
-    posicion_tipo = search_name(tipo_pokemon1, lista, 19)
-    buscar = lista[0].index(tipo_pokemon2)
+def analizar_efectividad(type_pokemon1: str, type_pokemon2: str, lista: list):
+    posicion_tipo = search_name(type_pokemon1, lista, 19)
+    buscar = lista[0].index(type_pokemon2)
     return float(lista[posicion_tipo][buscar])
 
 
-def type_attack(tipo_pokemon, tipo_ataque):
-    if tipo_pokemon == tipo_ataque:
+def type_attack(type_pokemon, tipo_ataque):
+    if type_pokemon == tipo_ataque:
         return 1.2
     else:
         return 1.0
+
+
+def cantidad_habilidades(pokemon_position, lista: list):
+    cut = lista[pokemon_position][8].split(sep=";")
+    contar = 0
+    for recorer in cut:
+        contar += 1
+    return contar
+
