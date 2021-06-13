@@ -1,6 +1,7 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
-from src import read_document as leer
+from src.lista_pokemon import read_document as leer
 from movimiento import moves
+import os.path
 
 print(moves.get_move("electroweb"))
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
@@ -24,7 +25,8 @@ print("::Se permiten el uso de pokemones legendarios, pero si miticos y singular
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 
-data_pokemon = leer.data_of_pokemons()
+ruta_pokemon_data = os.path.abspath("./lista_pokemon/pokemon_data.csv")
+data_pokemon = leer.matriz_de_lectura_de_documento(ruta_pokemon_data)
 nombre_primer_pokemon = input("Elija su pokemon: ")
 search_pokemon = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
 while search_pokemon == False:

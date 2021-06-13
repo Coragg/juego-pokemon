@@ -1,6 +1,6 @@
-# esta funcion lee el archivo pokemon_data.csv y
-def data_of_pokemons():
-    read_file = open("pokemon_data.csv", "r")
+# esta funcion lee un documento y luego todo lo que este con "\n y ," sera separado en una matriz
+def matriz_de_lectura_de_documento(ruta: str):
+    read_file = open(ruta, "r")
     basic_information = []
     for leer_linea_por_linea in read_file:
         list_data = leer_linea_por_linea.replace('\n', "").split(sep=",")
@@ -8,7 +8,8 @@ def data_of_pokemons():
     read_file.close()
     return basic_information
 
-# buscar la posicion de la lista de un nombre
+
+# buscar la posicion en la lista donde esta posicionado un pokemon nombre
 def buscar_nombre(name: str, nombre_lista: list):
     posicion = False
     for x in range(832):
