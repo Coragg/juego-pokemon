@@ -10,9 +10,9 @@ def matriz_de_lectura_de_documento(ruta: str):
 
 
 # buscar el punto donde esta posicionado el pokemon en la lista
-def search_name(name: str, name_list: list):
+def search_name(name: str, name_list: list, cantidad_datos: int):
     position = False
-    for revisar_nombre in range(832):
+    for revisar_nombre in range(cantidad_datos):
         if name_list[revisar_nombre][0] == name.lower():
             position += revisar_nombre
             break
@@ -31,3 +31,16 @@ def mostrar_habilidad(posicion_pokemon: int, list_pokemon: list):
 def buscar_habilidad_seleccionada(posicion_pokemon, posicion_habilidad: int, lista: list):
     cut = lista[posicion_pokemon][8].split(sep=";")
     return cut[posicion_habilidad]
+
+
+#
+def analizar_efectividad(tipo_pokemon1: str, tipo_pokemon2: str, lista: list):
+    posicion_tipo = search_name(tipo_pokemon1, lista, 19)
+    buscar = lista[0].index(tipo_pokemon2)
+    return lista[posicion_tipo][buscar]
+
+
+
+
+
+

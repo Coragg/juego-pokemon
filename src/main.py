@@ -26,16 +26,17 @@ print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ruta_pokemon_data = "./lista_pokemon/pokemon_data.csv"
 data_pokemon = leer.matriz_de_lectura_de_documento(ruta_pokemon_data)
 ruta_tabla_efectividad = "./lista_pokemon/tabla_efectividad.csv"
+tabla_efectivida = leer.matriz_de_lectura_de_documento(ruta_tabla_efectividad)
 
 # Recolectar informacion del primer pokemon
 search_pokemon = False
 while search_pokemon == False:
       nombre_primer_pokemon = input("Elija su pokemon: ")
-      search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon)
+      search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon, 832)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
 primer_pokemon.set_name(data_pokemon[search_pokemon][0])
-
+primer_pokemon.set_type_pokemon(data_pokemon[search_pokemon][0])
 print(f"Nombre del Pokémon seleccionado:  {primer_pokemon.get_name()}")
 print("Estadisticas bases del pokémon: ")
 primer_pokemon.set_hp(data_pokemon[search_pokemon][2])
@@ -70,7 +71,7 @@ print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name
 search_second_pokemon = False
 while search_second_pokemon == False:
       segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
-      search_second_pokemon = leer.search_name(segundo_poke, data_pokemon)
+      search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 
 segundo_pokemon = info_poke.CaracteristicasPokemon()
 segundo_pokemon.set_name(data_pokemon[search_second_pokemon][0])
