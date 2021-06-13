@@ -58,7 +58,7 @@ leer.mostrar_habilidad(search_pokemon, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
-
+print(informacion_hablidada)
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
 
 
@@ -93,6 +93,7 @@ while search_second_pokemon == False:
 segundo_pokemon = info_poke.CaracteristicasPokemon()
 segundo_pokemon.set_name(data_pokemon[search_second_pokemon][0])
 print(f"Nombre del Pokémon seleccionado: {segundo_pokemon.get_name()}")
+segundo_pokemon.set_type_pokemon(data_pokemon[search_second_pokemon][1])
 segundo_pokemon.set_hp(data_pokemon[search_second_pokemon][2])
 segundo_pokemon.set_attack(data_pokemon[search_second_pokemon][3])
 segundo_pokemon.set_defense(data_pokemon[search_second_pokemon][4])
@@ -114,6 +115,13 @@ velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity())
 segundo_pokemon.set_velocity(velocity_amplified)
 
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
+power = informacion_hablidada[1]
+tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
+                                         data_pokemon)
+stab = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+atacar_segundo_pokemon = estadisticas.damages(power, tipo_pokemon, stab, primer_pokemon.get_attack(),
+                                              segundo_pokemon.get_defense())
+segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
       f"{segundo_pokemon.get_hp()}")
 
