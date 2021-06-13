@@ -14,6 +14,9 @@ class CaracteristicasPokemon:
     #     self.hp = health_point
     #     self.attack = damages
 
+    def set_hp(self, health_point):
+        self.hp = health_point
+
     def get_hp(self):
         return self.hp
 

@@ -24,16 +24,17 @@ print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 data_pokemon = leer.data_of_pokemons()
 nombre_primer_pokemon = input("Elija su pokemon: ")
-buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
-while buscar_nombre_primer == False:
+search_pokemon = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
+while search_pokemon == False:
       nombre_primer_pokemon = input("Elija su pokemon: ")
-      buscar_nombre_primer = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
+      search_pokemon = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
-primer_pokemon.set_name(data_pokemon[buscar_nombre_primer][0])
+primer_pokemon.set_name(data_pokemon[search_pokemon][0])
 
 print(f"Nombre del Pokémon seleccionado:  {primer_pokemon.get_name()}")
 print("Estadisticas bases del pokémon: ")
+primer_pokemon.set_hp(data_pokemon[search_pokemon][2])
 print("\thp =", primer_pokemon.get_hp())
 print("\tAtaque =", primer_pokemon.get_attack())
 print("\tDefensa = ", primer_pokemon.get_defense())
@@ -42,7 +43,7 @@ print("\tDefensa especial =", primer_pokemon.get_special_defense())
 print("\tVelociodad =", primer_pokemon.get_velocity())
 
 print("\nMovimientos que puede aprender el pokémon: ")
-leer.mostrar_habilidades(buscar_nombre_primer, data_pokemon)
+leer.mostrar_habilidades(search_pokemon, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")
