@@ -1,9 +1,7 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
-from src.lista_pokemon import read_document as leer
+from lista_pokemon import read_document as leer
 from movimiento import moves
-import os.path
 
-print(moves.get_move("electroweb"))
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
@@ -25,13 +23,15 @@ print("::Se permiten el uso de pokemones legendarios, pero si miticos y singular
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 
-ruta_pokemon_data = os.path.abspath("./lista_pokemon/pokemon_data.csv")
+ruta_pokemon_data = "./lista_pokemon/pokemon_data.csv"
 data_pokemon = leer.matriz_de_lectura_de_documento(ruta_pokemon_data)
-nombre_primer_pokemon = input("Elija su pokemon: ")
-search_pokemon = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
+ruta_tabla_efectividad = "./lista_pokemon/tabla_efectividad.csv"
+
+# Recolectar informacion del primer pokemon
+search_pokemon = False
 while search_pokemon == False:
       nombre_primer_pokemon = input("Elija su pokemon: ")
-      search_pokemon = leer.buscar_nombre(nombre_primer_pokemon, data_pokemon)
+      search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
 primer_pokemon.set_name(data_pokemon[search_pokemon][0])
@@ -52,7 +52,7 @@ primer_pokemon.set_velocity(data_pokemon[search_pokemon][7])
 print("\tVelociodad =", primer_pokemon.get_velocity())
 
 print("\nMovimientos que puede aprender el pokémon: ")
-leer.mostrar_habilidades(search_pokemon, data_pokemon)
+leer.mostrar_habilidad(search_pokemon, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
@@ -65,14 +65,16 @@ print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name
 print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
 
-segundo_poke = input("Nombre del Pokémon seleccionado:   ")
-search_second_pokemon = leer.buscar_nombre(segundo_poke, data_pokemon)
+
+# Pokemon a enfrentar
+search_second_pokemon = False
 while search_second_pokemon == False:
-      segundo_poke = input("Elija su pokemon: ")
-      search_second_pokemon = leer.buscar_nombre(segundo_poke, data_pokemon)
+      segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
+      search_second_pokemon = leer.search_name(segundo_poke, data_pokemon)
 
 segundo_pokemon = info_poke.CaracteristicasPokemon()
 segundo_pokemon.set_name(data_pokemon[search_second_pokemon][0])
+print(f"Nombre del Pokémon seleccionado: {segundo_pokemon.get_name()}")
 segundo_pokemon.set_hp(data_pokemon[search_second_pokemon][2])
 segundo_pokemon.set_attack(data_pokemon[search_second_pokemon][3])
 segundo_pokemon.set_defense(data_pokemon[search_second_pokemon][4])
@@ -82,7 +84,7 @@ segundo_pokemon.set_velocity(data_pokemon[search_second_pokemon][7])
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {None}")
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {None}")
 
-print(f"{segundo_pokemon.name} quedó con un health_point de: {None}")
+print(f"{segundo_pokemon.name} quedó con un hp de: {None}")
 
 
 

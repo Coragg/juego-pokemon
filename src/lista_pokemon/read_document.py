@@ -3,31 +3,31 @@ def matriz_de_lectura_de_documento(ruta: str):
     read_file = open(ruta, "r")
     basic_information = []
     for leer_linea_por_linea in read_file:
-        list_data = leer_linea_por_linea.replace('\n', "").split(sep=",")
-        basic_information.append(list_data)
+        listar_informacion = leer_linea_por_linea.replace('\n', "").split(sep=",")
+        basic_information.append(listar_informacion)
     read_file.close()
     return basic_information
 
 
-# buscar la posicion en la lista donde esta posicionado un pokemon nombre
-def buscar_nombre(name: str, nombre_lista: list):
-    posicion = False
-    for x in range(832):
-        if nombre_lista[x][0] == name.lower():
-            posicion += x
+# buscar el punto donde esta posicionado el pokemon en la lista
+def search_name(name: str, name_list: list):
+    position = False
+    for revisar_nombre in range(832):
+        if name_list[revisar_nombre][0] == name.lower():
+            position += revisar_nombre
             break
-    return posicion
+    return position
 
 
-def mostrar_habilidades(posicion_pokemon: int, lista_pokemon: list):
-    cortar = lista_pokemon[posicion_pokemon][8].split(sep=";")
+def mostrar_habilidad(posicion_pokemon: int, list_pokemon: list):
+    cut = list_pokemon[posicion_pokemon][8].split(sep=";")
     recorre = 0
-    for recorrer in cortar:
+    for recorrer in cut:
         print(f"{recorre} - {recorrer}")
         recorre += 1
 
 
 # buscara una habilidad en la lista genereda por la lectura del archivo
 def buscar_habilidad_seleccionada(posicion_pokemon, posicion_habilidad: int, lista: list):
-    cortar = lista[posicion_pokemon][8].split(sep=";")
-    return cortar[posicion_habilidad]
+    cut = lista[posicion_pokemon][8].split(sep=";")
+    return cut[posicion_habilidad]
