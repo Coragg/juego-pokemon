@@ -73,10 +73,12 @@ primer_pokemon.set_defense(amplified_defense)
 print(f"El def al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_defense()}")
 amplified_special_attack = estadisticas.other_stat(int(primer_pokemon.get_special_attack()))
 primer_pokemon.set_special_attack(amplified_special_attack)
-print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_special_attack()}")
+print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es "
+      f"{primer_pokemon.get_special_attack()}")
 amplified_special_defense = estadisticas.other_stat(int(primer_pokemon.get_special_defense()))
 primer_pokemon.set_special_defense(amplified_special_defense)
-print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_special_defense()}")
+print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es "
+      f"{primer_pokemon.get_special_defense()}")
 amplified_velocity = estadisticas.other_stat(int(primer_pokemon.get_velocity()))
 primer_pokemon.set_velocity(amplified_velocity)
 print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_velocity()}")
@@ -112,7 +114,8 @@ velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity())
 segundo_pokemon.set_velocity(velocity_amplified)
 
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
-print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {segundo_pokemon.get_hp()}")
+print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
+      f"{segundo_pokemon.get_hp()}")
 
 print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
 
