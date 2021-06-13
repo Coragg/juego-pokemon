@@ -25,3 +25,4 @@ def damages(power, type_pokemon, stab, ataque, defensa_enemigo):
     use_modifier = modifier(type_pokemon, stab)
     calculo = (((((2 * level) / 5) + 2) * power * (ataque / defensa_enemigo) / 50) + 2) * use_modifier
     return calculo
+
