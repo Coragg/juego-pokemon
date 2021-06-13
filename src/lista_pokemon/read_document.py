@@ -39,6 +39,10 @@ def analizar_efectividad(tipo_pokemon1: str, tipo_pokemon2: str, lista: list):
     buscar = lista[0].index(tipo_pokemon2)
     return lista[posicion_tipo][buscar]
 
+# data = matriz_de_lectura_de_documento("tabla_efectividad.csv")
+# dd = analizar_efectividad("bug", "rock", data)
+# print(type(dd))
+
 
 def type_attack(tipo_pokemon, tipo_ataque):
     if tipo_pokemon == tipo_ataque:

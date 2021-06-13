@@ -14,7 +14,7 @@ def other_stat(base):
     return calculate_other_stat
 
 
-def modifier(type_pokemon, stab):
+def modifier(type_pokemon: eval, stab: eval):
     random_decimal = random.uniform(0.85, 1)
     calculate_modifier = type_pokemon * stab * random_decimal * 1
     return round(calculate_modifier, 2)
@@ -25,4 +25,6 @@ def damages(power, type_pokemon, stab, ataque, defensa_enemigo):
     use_modifier = modifier(type_pokemon, stab)
     calculo = (((((2 * level) / 5) + 2) * power * (ataque / defensa_enemigo) / 50) + 2) * use_modifier
     return calculo
+
+
 
