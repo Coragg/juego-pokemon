@@ -81,8 +81,6 @@ print(f"{segundo_pokemon.name} quedó con un health_point de: {None}")
 
 
 
-
-
 # demo de combate
 # print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
 #       segundo_pokemom.get_hp())

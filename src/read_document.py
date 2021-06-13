@@ -8,6 +8,7 @@ def data_of_pokemons():
     read_file.close()
     return basic_information
 
+# buscar la posicion de la lista de un nombre
 def buscar_nombre(name: str, nombre_lista: list):
     posicion = False
     for x in range(832):
@@ -17,7 +18,6 @@ def buscar_nombre(name: str, nombre_lista: list):
     return posicion
 
 
-data = data_of_pokemons()
 def mostrar_habilidades(posicion_pokemon: int, lista_pokemon: list):
     cortar = lista_pokemon[posicion_pokemon][8].split(sep=";")
     recorre = 0
