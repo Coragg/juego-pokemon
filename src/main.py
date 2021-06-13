@@ -1,6 +1,7 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
 from movimiento import moves
+from datos_pokemo import estadisticas
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
@@ -61,13 +62,24 @@ informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
 
 
-
-print(f"El hp al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
-print(f"El atk al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
-print(f"El def al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
-print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
-print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
-print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
+amplified_life = estadisticas.health_point(int(primer_pokemon.get_hp()))
+primer_pokemon.set_hp(amplified_life)
+print(f"El hp al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_hp()}")
+amplified_attack = estadisticas.other_stat(int(primer_pokemon.get_attack()))
+primer_pokemon.set_attack(amplified_attack)
+print(f"El atk al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_attack()}")
+amplified_defense = estadisticas.other_stat(int(primer_pokemon.get_defense()))
+primer_pokemon.set_defense(amplified_defense)
+print(f"El def al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_defense()}")
+amplified_special_attack = estadisticas.other_stat(int(primer_pokemon.get_special_attack()))
+primer_pokemon.set_special_attack(amplified_special_attack)
+print(f"El spa al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_special_attack()}")
+amplified_special_defense = estadisticas.other_stat(int(primer_pokemon.get_special_defense()))
+primer_pokemon.set_special_defense(amplified_special_defense)
+print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_special_defense()}")
+amplified_velocity = estadisticas.other_stat(int(primer_pokemon.get_velocity()))
+primer_pokemon.set_velocity(amplified_velocity)
+print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_velocity()}")
 
 
 # Pokemon a enfrentar
