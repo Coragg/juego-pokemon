@@ -1,6 +1,8 @@
 from datos_pokemo import caracteristicas_pokemon as info_poke
 from src import read_document as leer
+from movimiento import moves
 
+print(moves.get_move("electroweb"))
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
@@ -50,6 +52,8 @@ print("\tVelociodad =", primer_pokemon.get_velocity())
 print("\nMovimientos que puede aprender el pokémon: ")
 leer.mostrar_habilidades(search_pokemon, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
+nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
+informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 
 print(f"El ataque seleccionado es:  {seleccionar_ataque}")
 print(f"El hp al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {None}")
