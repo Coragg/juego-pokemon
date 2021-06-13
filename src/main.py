@@ -112,9 +112,9 @@ velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity())
 segundo_pokemon.set_velocity(velocity_amplified)
 
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
-print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {None}")
+print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: {segundo_pokemon.get_hp()}")
 
-print(f"{segundo_pokemon.name} quedó con un hp de: {None}")
+print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
 
 
 
