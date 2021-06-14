@@ -60,7 +60,7 @@ leer.mostrar_habilidad(search_pokemon, data_pokemon)
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
-print(informacion_hablidada)
+
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
 
 
@@ -116,7 +116,11 @@ special_defense_amplified = estadisticas.other_stat(int(segundo_pokemon.get_spec
 segundo_pokemon.set_special_defense(special_defense_amplified)
 velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity()))
 segundo_pokemon.set_velocity(velocity_amplified)
-
+cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
+seleccionar_aleatorio= random.randint(0, cantidad_habilidades_aleatorio)
+nombre_hablidad_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_aleatorio,
+                                                                     data_pokemon)
+habilidad_segundo_pokemon = moves.get_move(nombre_hablidad_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
 power = informacion_hablidada[1]
 tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
@@ -141,7 +145,7 @@ print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_h
 
 #prototipo de cambate
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-      if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
+      if primer_pokemon.get_velocity() >= segundo_pokemon.get_velocity():
             if segundo_pokemon.get_hp() > 0 and primer_pokemon.get_hp() > 1:
                   power = informacion_hablidada[1]
                   tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
@@ -160,7 +164,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   break
       else:
             if primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-                  power = informacion_hablidada[1]
+                  power = habilidad_segundo_pokemon[1]
                   tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
                                                            primer_pokemon.get_type_pokemon(), tabla_efectivida)
                   stab = leer.type_attack(segundo_pokemon.get_type_pokemon(), informacion_hablidada[2])
