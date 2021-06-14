@@ -165,7 +165,10 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
 
 
-
+if primer_pokemon.get_hp() >= 0:
+      print(f"Gano {primer_pokemon.get_name()}")
+else:
+      print(f"Gano {segundo_pokemon.get_name()}")
 
 
 
