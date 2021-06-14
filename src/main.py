@@ -150,7 +150,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
             print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
                   f"{atacar_segundo_pokemon}")
 
-            if segundo_pokemon.get_hp() >= 0:
+            if segundo_pokemon.get_hp() > 0:
                   print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
             else:
                   break
@@ -166,7 +166,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_primer_pokemon}")
 
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
-            if primer_pokemon.get_hp() >= 0:
+            if primer_pokemon.get_hp() > 0:
                   print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
             else:
                   break
