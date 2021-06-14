@@ -29,10 +29,11 @@ ruta_pokemon_data = "./lista_pokemon/pokemon_data.csv"
 data_pokemon = leer.matriz_de_lectura_de_documento(ruta_pokemon_data)
 ruta_tabla_efectividad = "./lista_pokemon/tabla_efectividad.csv"
 tabla_efectivida = leer.matriz_de_lectura_de_documento(ruta_tabla_efectividad)
+falso = False
 
 # Recolectar informacion del primer pokemon
 search_pokemon = False
-while search_pokemon == False:
+while search_pokemon == falso:
       nombre_primer_pokemon = input("Elija su pokemon: ")
       search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon, 832)
 
@@ -86,8 +87,9 @@ print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name
 
 
 # Pokemon a enfrentar
-search_second_pokemon = False
-while search_second_pokemon == False:
+segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
+search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
+while search_second_pokemon == falso:
       segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
       search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 
@@ -178,9 +180,9 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
 
 
 if primer_pokemon.get_hp() >= 0:
-      print(f"Gano {primer_pokemon.get_name()}")
+      print(f"Gano {primer_pokemon.get_name()} \n ¡HAZ GANADO!")
 else:
-      print(f"Gano {segundo_pokemon.get_name()}")
+      print(f"Gano {segundo_pokemon.get_name()}\n ¡HAZ PERDIDO!")
 
 
 
