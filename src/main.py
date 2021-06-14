@@ -150,7 +150,10 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
             print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
                   f"{atacar_segundo_pokemon}")
 
-            print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+            if segundo_pokemon.get_hp() >= 0:
+                  print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+            else:
+                  break
       else:
             power = informacion_hablidada[1]
             tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
@@ -163,6 +166,10 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_primer_pokemon}")
 
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
+            if primer_pokemon.get_hp() >= 0:
+                  print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+            else:
+                  break
 
 
 if primer_pokemon.get_hp() >= 0:
