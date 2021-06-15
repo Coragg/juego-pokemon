@@ -177,7 +177,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
             else:
                   break
       else:
-            if primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
+            if primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 1:
                   power = habilidad_segundo_pokemon[1]
                   tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
                                                            primer_pokemon.get_type_pokemon(), tabla_efectivida)
@@ -193,7 +193,6 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   else:
                         print("Fin de la batalla")
             else:
-                  break
                   power = informacion_hablidada[1]
                   tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
                                                      segundo_pokemon.get_type_pokemon(), tabla_efectivida)
