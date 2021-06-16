@@ -20,7 +20,7 @@ class TestReadDocument(unittest.TestCase):
         self.assertEqual(leer.buscar_habilidad_seleccionada(9, 1, data), "electroweb")
 
     def test_cantidad_de_habilidades(self):
-        self.assertEqual(leer.cantidad_habilidades(9, data), 5)
+        self.assertEqual(leer.cantidad_habilidades(9, data), 4)
 
 
 if __name__ == "__main__":

@@ -52,4 +52,4 @@ def cantidad_habilidades(pokemon_position, lista: list):
     contar = 0
     for recorer in cut:
         contar += 1
-    return contar
+    return contar - 1
