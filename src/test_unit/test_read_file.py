@@ -1,3 +1,5 @@
+#Este archivo sirve para testear las funciones del read document.
+
 from src.lista_pokemon import read_document as leer
 import unittest
 
