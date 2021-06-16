@@ -9,11 +9,6 @@ class CaracteristicasPokemon:
     defense: eval
     special_defense: eval
 
-    # def __init__(self, name, health_point, damages):
-    #     self.name = name
-    #     self.hp = health_point
-    #     self.attack = damages
-
     def set_hp(self, health_point):
         self.hp = health_point
 
@@ -68,3 +63,12 @@ class CaracteristicasPokemon:
     def get_special_defense(self):
         return self.special_defense
 
+    def send_data(self, list_of_data: list, ruta):
+        self.set_name(list_of_data[ruta][0])
+        self.set_type_pokemon(list_of_data[ruta][1])
+        self.set_hp(list_of_data[ruta][2])
+        self.set_attack(list_of_data[ruta][3])
+        self.set_defense(list_of_data[ruta][4])
+        self.set_special_attack(list_of_data[ruta][5])
+        self.set_special_defense(list_of_data[ruta][6])
+        self.set_velocity(list_of_data[ruta][7])

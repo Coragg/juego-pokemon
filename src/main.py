@@ -2,7 +2,7 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
 from datos_pokemo import estadisticas
 from movimiento import moves
-import mandar_datos_class as send
+# import mandar_datos_class as send
 import random
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
@@ -39,21 +39,14 @@ while search_pokemon == falso:
       search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon, 832)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
-primer_pokemon.set_name(data_pokemon[search_pokemon][0])
-primer_pokemon.set_type_pokemon(data_pokemon[search_pokemon][1])
+primer_pokemon.send_data(data_pokemon, search_pokemon)
 print(f"Nombre del Pokémon seleccionado:  {primer_pokemon.get_name()}")
 print("Estadisticas bases del pokémon: ")
-primer_pokemon.set_hp(data_pokemon[search_pokemon][2])
 print("\thp =", primer_pokemon.get_hp())
-primer_pokemon.set_attack(data_pokemon[search_pokemon][3])
 print("\tAtaque =", primer_pokemon.get_attack())
-primer_pokemon.set_defense(data_pokemon[search_pokemon][4])
 print("\tDefensa = ", primer_pokemon.get_defense())
-primer_pokemon.set_special_attack(data_pokemon[search_pokemon][5])
 print("\tAtaque especial =", primer_pokemon.get_special_attack())
-primer_pokemon.set_special_defense(data_pokemon[search_pokemon][6])
 print("\tDefensa especial =", primer_pokemon.get_special_defense())
-primer_pokemon.set_velocity(data_pokemon[search_pokemon][7])
 print("\tVelociodad =", primer_pokemon.get_velocity())
 
 print("\nMovimientos que puede aprender el pokémon: ")
@@ -95,7 +88,7 @@ while search_second_pokemon == falso:
       search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 
 segundo_pokemon = info_poke.CaracteristicasPokemon()
-send.send_data(data_pokemon, search_second_pokemon, segundo_pokemon)
+segundo_pokemon.send_data(data_pokemon, search_second_pokemon)
 print(f"Nombre del Pokémon seleccionado: {segundo_pokemon.get_name()}")
 
 
@@ -112,9 +105,9 @@ segundo_pokemon.set_special_defense(special_defense_amplified)
 velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity()))
 segundo_pokemon.set_velocity(velocity_amplified)
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
-seleccionar_aleatorio= random.randint(0, cantidad_habilidades_aleatorio)
-nombre_hablidad_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_aleatorio,data_pokemon)
-habilidad_segundo_pokemon = moves.get_move(nombre_hablidad_segundo_pokemon)
+random_select = random.randint(0, cantidad_habilidades_aleatorio)
+name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, random_select, data_pokemon)
+habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
 power = informacion_hablidada[1]
 tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
@@ -137,7 +130,7 @@ print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_h
 
 
 
-#prototipo de cambate
+# prototipo de cambate
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
       if primer_pokemon.get_velocity() >= segundo_pokemon.get_velocity():
             if segundo_pokemon.get_hp() > 0 and primer_pokemon.get_hp() > 1:
