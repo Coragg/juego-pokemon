@@ -2,6 +2,7 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
 from datos_pokemo import estadisticas
 from movimiento import moves
+import mandar_datos_class as send
 import random
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
@@ -94,15 +95,9 @@ while search_second_pokemon == falso:
       search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 
 segundo_pokemon = info_poke.CaracteristicasPokemon()
-segundo_pokemon.set_name(data_pokemon[search_second_pokemon][0])
+send.send_data(data_pokemon, search_second_pokemon, segundo_pokemon)
 print(f"Nombre del Pokémon seleccionado: {segundo_pokemon.get_name()}")
-segundo_pokemon.set_type_pokemon(data_pokemon[search_second_pokemon][1])
-segundo_pokemon.set_hp(data_pokemon[search_second_pokemon][2])
-segundo_pokemon.set_attack(data_pokemon[search_second_pokemon][3])
-segundo_pokemon.set_defense(data_pokemon[search_second_pokemon][4])
-segundo_pokemon.set_special_attack(data_pokemon[search_second_pokemon][5])
-segundo_pokemon.set_special_defense(data_pokemon[search_second_pokemon][6])
-segundo_pokemon.set_velocity(data_pokemon[search_second_pokemon][7])
+
 
 amplified_hp = estadisticas.health_point(int(segundo_pokemon.get_hp()))
 segundo_pokemon.set_hp(amplified_hp)
