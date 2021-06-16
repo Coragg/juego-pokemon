@@ -118,8 +118,7 @@ velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity())
 segundo_pokemon.set_velocity(velocity_amplified)
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
 seleccionar_aleatorio= random.randint(0, cantidad_habilidades_aleatorio)
-nombre_hablidad_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_aleatorio,
-                                                                     data_pokemon)
+nombre_hablidad_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_aleatorio,data_pokemon)
 habilidad_segundo_pokemon = moves.get_move(nombre_hablidad_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
 power = informacion_hablidada[1]

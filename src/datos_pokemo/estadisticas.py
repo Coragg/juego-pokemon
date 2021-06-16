@@ -4,14 +4,12 @@ import math
 
 def health_point(base):
     level, iv, ev = 50, 31, 250
-    hp = (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + level + 10
-    return hp
+    return (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + level + 10
 
 
 def other_stat(base):
     level, iv, ev = 50, 31, 250
-    calculate_other_stat = (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + 5
-    return calculate_other_stat
+    return (((((base + iv) * 2) + ((math.sqrt(ev)) / 4)) * level) / 100) + 5
 
 
 def modifier(type_pokemon: eval, stab: eval):
@@ -23,5 +21,4 @@ def modifier(type_pokemon: eval, stab: eval):
 def damages(power, type_pokemon, stab, attack, enemy_defense):
     level = 50
     use_modifier = modifier(type_pokemon, stab)
-    calculate = (((((2 * level) / 5) + 2) * power * (attack / enemy_defense) / 50) + 2) * use_modifier
-    return calculate
+    return (((((2 * level) / 5) + 2) * power * (attack / enemy_defense) / 50) + 2) * use_modifier
