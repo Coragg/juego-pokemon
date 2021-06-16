@@ -1,6 +1,6 @@
-#TDFI102.202110.10459.TR
-#Trabajo Pokemon
-#Integrantes: Anibal Muñoz (21087122-5), Victor Camero (25833773-5) y Sofia Castro (21042213-7).
+# TDFI102.202110.10459.TR
+# Trabajo Pokemon
+# Integrantes: Anibal Muñoz (21087122-5), Victor Camero (25833773-5) y Sofia Castro (21042213-7).
 
 from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
@@ -112,11 +112,12 @@ random_select = random.randint(0, cantidad_habilidades_aleatorio)
 name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, random_select, data_pokemon)
 habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
-power = informacion_hablidada[1]
-tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
-                                         tabla_efectivida)
-stab = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-atacar_segundo_pokemon = estadisticas.damages(power, tipo_pokemon, stab, primer_pokemon.get_attack(),
+power_primer_pokemon = informacion_hablidada[1]
+power_segundo_pokemon = habilidad_segundo_pokemon[1]
+tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
+                                                tabla_efectivida)
+stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon, primer_pokemon.get_attack(),
                                               segundo_pokemon.get_defense())
 segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
 print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
@@ -128,29 +129,60 @@ print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_h
 
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
       if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
-
-            segundo_pokemon.set_damages_received(20)
+            # daño al segundo pokemon
+            tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
+                                                            segundo_pokemon.get_type_pokemon(),
+                                                            tabla_efectivida)
+            stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+            atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
+                                                          primer_pokemon.get_attack(),
+                                                          segundo_pokemon.get_defense())
+            segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
             if segundo_pokemon.get_hp() > 0:
                   print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
             else:
                   print(f"Perdio {segundo_pokemon.get_name()}")
                   break
-            primer_pokemon.set_damages_received(20)
+            # daño al primer pokemon
+            tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
+                                                             primer_pokemon.get_type_pokemon(),
+                                                             tabla_efectivida)
+            stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
+            atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
+                                                         stab_segundo_pokemon, segundo_pokemon.get_attack(),
+                                                         primer_pokemon.get_defense())
+            primer_pokemon.set_damages_received(atacar_primer_pokemon)
             if primer_pokemon.get_hp() > 0:
                   print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
             else:
                   print(f"Perdio {primer_pokemon.get_name()}")
                   break
       else:
-
-            primer_pokemon.set_damages_received(20)
+            # daño al segundo pokemon
+            tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
+                                                             primer_pokemon.get_type_pokemon(),
+                                                             tabla_efectivida)
+            stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
+            atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
+                                                         stab_segundo_pokemon, segundo_pokemon.get_attack(),
+                                                         primer_pokemon.get_defense())
+            primer_pokemon.set_damages_received(atacar_primer_pokemon)
             if primer_pokemon.get_hp() > 0:
                   print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
             else:
                   print(f"Perdio {primer_pokemon.get_name()}")
                   break
 
-            segundo_pokemon.set_damages_received(20)
+            # daño al primer pokemon
+            tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
+                                                            segundo_pokemon.get_type_pokemon(),
+                                                            tabla_efectivida)
+            stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+            atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon,
+                                                          tipo_primer_pokemon, stab_primer_pokemon,
+                                                          primer_pokemon.get_attack(),
+                                                          segundo_pokemon.get_defense())
+            segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
             if segundo_pokemon.get_hp() > 0:
                   print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
             else:
