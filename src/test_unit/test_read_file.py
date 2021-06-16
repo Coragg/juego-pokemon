@@ -13,9 +13,6 @@ class TestReadDocument(unittest.TestCase):
         self.assertEqual(leer.search_name("caterpie", data, 832), 9)
         self.assertEqual(leer.search_name("ivysaur", data, 832), 1)
 
-    def test_catidad_habilidades(self):
-        assert leer.cantidad_habilidades(9, data) == 5
-
     def test_buscar_habilidad(self):
         self.assertEqual(leer.buscar_habilidad_seleccionada(9, 1, data), "electroweb")
 

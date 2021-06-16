@@ -6,7 +6,6 @@ from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
 from datos_pokemo import estadisticas
 from movimiento import moves
-# import mandar_datos_class as send
 import random
 
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
@@ -125,18 +124,43 @@ print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.ge
 
 print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
 
-
-
-
-
 # tercer prototipo de combate
-print(segundo_pokemon.get_hp())
-while segundo_pokemon.get_hp() > 0:
-      segundo_pokemon.set_damages_received(20)
-      print(segundo_pokemon.get_hp())
-# while primer_pokemon.get_hp() > 0 or segundo_pokemon.get_hp() > 0:
-#       segundo_pokemon.set_damages_received(4)
-#       print(segundo_pokemon.get_hp())
+
+while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
+      if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
+
+            segundo_pokemon.set_damages_received(20)
+            if segundo_pokemon.get_hp() > 0:
+                  print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
+            else:
+                  print(f"Perdio {segundo_pokemon.get_name()}")
+                  break
+            primer_pokemon.set_damages_received(20)
+            if primer_pokemon.get_hp() > 0:
+                  print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
+            else:
+                  print(f"Perdio {primer_pokemon.get_name()}")
+                  break
+      else:
+
+            primer_pokemon.set_damages_received(20)
+            if primer_pokemon.get_hp() > 0:
+                  print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
+            else:
+                  print(f"Perdio {primer_pokemon.get_name()}")
+                  break
+
+            segundo_pokemon.set_damages_received(20)
+            if segundo_pokemon.get_hp() > 0:
+                  print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
+            else:
+                  print(f"Perdio {segundo_pokemon.get_name()}")
+                  break
+
+
+
+
+
 
 
 
