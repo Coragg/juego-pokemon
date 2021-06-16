@@ -1,4 +1,4 @@
-# esta funcion lee un documento y luego todo lo que este con "\n y ," sera separado en una matriz
+#Esta funcion lee un documento y luego todo lo que este con "\n y ," sera separado en una matriz
 def matriz_de_lectura_de_documento(ruta: str):
     read_file = open(ruta, "r")
     basic_information = []

@@ -1,3 +1,7 @@
+#TDFI102.202110.10459.TR
+#Trabajo Pokemon
+#Integrantes: Anibal Muñoz (21087122-5), Victor Camero (25833773-5) y Sofia Castro (21042213-7).
+
 from datos_pokemo import caracteristicas_pokemon as info_poke
 from lista_pokemon import read_document as leer
 from datos_pokemo import estadisticas

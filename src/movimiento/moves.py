@@ -1,3 +1,5 @@
+#Este archivo recopila algunos datos como el basepower y el type.
+
 def get_move(move):
     move_list = {
         "10000000voltthunderbolt": {

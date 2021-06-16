@@ -1,3 +1,5 @@
+#Este archivo contiene las ecuaciones para el desarrollo del ataque.
+
 import random
 import math
 
