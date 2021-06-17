@@ -108,7 +108,7 @@ segundo_pokemon.set_velocity(velocity_amplified)
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
 random_select = random.randrange(0, cantidad_habilidades_aleatorio)
 print(random_select)
-name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_pokemon, random_select, data_pokemon)
+name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_second_pokemon, random_select, data_pokemon)
 
 habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 
