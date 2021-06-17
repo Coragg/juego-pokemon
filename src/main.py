@@ -111,13 +111,6 @@ habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
 power_primer_pokemon = informacion_hablidada[1]
 power_segundo_pokemon = habilidad_segundo_pokemon[1]
-# tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
-#                                                 tabla_efectivida)
-# stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-# atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
-#                                               primer_pokemon.get_attack(),
-#                                               segundo_pokemon.get_defense())
-# segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
 
 # tercer prototipo de combate
 
