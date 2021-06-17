@@ -63,8 +63,6 @@ while seleccionar_ataque <= -1 or seleccionar_ataque > cantidad_habilidades:
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 
-
-
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
 
 amplified_life = estadisticas.health_point(int(primer_pokemon.get_hp()))
@@ -196,28 +194,3 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
         else:
             print(f"Perdio {segundo_pokemon.get_name()}")
             break
-
-
-# demo de combate
-# print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp(), "vs", f"{segundo_pokemom.name_pokemon}:",
-#       segundo_pokemom.get_hp())
-#
-# turno = 0
-# while primer_pokemo.get_hp() > 0 and segundo_pokemom.get_hp() > 0:
-#     if turno == 0:
-#         # turno del primer
-#         ataque = segundo_pokemom.damages
-#         primer_pokemo.set_damages_received(ataque)
-#         print(f"{primer_pokemo.name_pokemon}:", primer_pokemo.get_hp())
-#         turno += 1
-#     if turno == 1:
-#         # turno de pokemon
-#         ataque = primer_pokemo.damages
-#         segundo_pokemom.set_damages_received(ataque)
-#         print(f"{segundo_pokemom.name_pokemon}:", segundo_pokemom.get_hp())
-#         turno -= 1
-#
-# if primer_pokemo.health_point <= 0:
-#     print(f"{primer_pokemo.name_pokemon} ha sido debilitado")
-# else:
-#     print(f"{segundo_pokemom.name_pokemon} ha sido debilitado")

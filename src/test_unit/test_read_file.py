@@ -23,5 +23,6 @@ class TestReadDocument(unittest.TestCase):
         self.assertEqual(leer.cantidad_habilidades(378, data), 98)
         self.assertEqual(leer.cantidad_habilidades(357, data), 109)
 
+
 if __name__ == "__main__":
     unittest.main()
