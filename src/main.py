@@ -7,6 +7,7 @@ from lista_pokemon import read_document as leer
 from datos_pokemo import estadisticas
 from movimiento import moves
 import random
+
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
@@ -53,9 +54,16 @@ print("\tVelociodad =", primer_pokemon.get_velocity())
 
 print("\nMovimientos que puede aprender el pokémon: ")
 leer.mostrar_habilidad(search_pokemon, data_pokemon)
+
+
 seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
+cantidad_habilidades = leer.cantidad_habilidades(search_pokemon, data_pokemon)
+while seleccionar_ataque <= -1 or seleccionar_ataque > cantidad_habilidades:
+    seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
+
+
 
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
 
@@ -104,10 +112,9 @@ segundo_pokemon.set_special_defense(special_defense_amplified)
 velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity()))
 segundo_pokemon.set_velocity(velocity_amplified)
 
-# code with error in select the hability in the list
+
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
 random_select = random.randrange(0, cantidad_habilidades_aleatorio)
-print(random_select)
 name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_second_pokemon, random_select, data_pokemon)
 
 habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
