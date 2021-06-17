@@ -1,4 +1,4 @@
-#Este archivo testea las funciones de estadisticas.
+# Este archivo testea las funciones de estadisticas.
 
 from src.datos_pokemo import estadisticas
 import unittest

@@ -38,8 +38,8 @@ falso = False
 # Recolectar informacion del primer pokemon
 search_pokemon = False
 while search_pokemon == falso:
-      nombre_primer_pokemon = input("Elija su pokemon: ")
-      search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon, 832)
+    nombre_primer_pokemon = input("Elija su pokemon: ")
+    search_pokemon = leer.search_name(nombre_primer_pokemon, data_pokemon, 832)
 
 primer_pokemon = info_poke.CaracteristicasPokemon()
 primer_pokemon.send_data(data_pokemon, search_pokemon)
@@ -59,7 +59,6 @@ nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, sel
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
-
 
 amplified_life = estadisticas.health_point(int(primer_pokemon.get_hp()))
 primer_pokemon.set_hp(amplified_life)
@@ -82,18 +81,16 @@ amplified_velocity = estadisticas.other_stat(int(primer_pokemon.get_velocity()))
 primer_pokemon.set_velocity(amplified_velocity)
 print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_velocity()}")
 
-
 # Pokemon a enfrentar
 segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
 search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 while search_second_pokemon == falso:
-      segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
-      search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
+    segundo_poke = input("Ingrese el nombre del Pokémon a atacar: ")
+    search_second_pokemon = leer.search_name(segundo_poke, data_pokemon, 832)
 
 segundo_pokemon = info_poke.CaracteristicasPokemon()
 segundo_pokemon.send_data(data_pokemon, search_second_pokemon)
 print(f"Nombre del Pokémon seleccionado: {segundo_pokemon.get_name()}")
-
 
 amplified_hp = estadisticas.health_point(int(segundo_pokemon.get_hp()))
 segundo_pokemon.set_hp(amplified_hp)
@@ -114,166 +111,86 @@ habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
 power_primer_pokemon = informacion_hablidada[1]
 power_segundo_pokemon = habilidad_segundo_pokemon[1]
-tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
-                                                tabla_efectivida)
-stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon, primer_pokemon.get_attack(),
-                                              segundo_pokemon.get_defense())
-segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
-print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
-      f"{atacar_segundo_pokemon}")
-
-print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+# tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(), segundo_pokemon.get_type_pokemon(),
+#                                                 tabla_efectivida)
+# stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+# atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
+#                                               primer_pokemon.get_attack(),
+#                                               segundo_pokemon.get_defense())
+# segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
 
 # tercer prototipo de combate
 
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-      if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
-            # daño al segundo pokemon
-            tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
-                                                            segundo_pokemon.get_type_pokemon(),
-                                                            tabla_efectivida)
-            stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-            atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
-                                                          primer_pokemon.get_attack(),
-                                                          segundo_pokemon.get_defense())
-            segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
-            if segundo_pokemon.get_hp() > 0:
-                  print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
-            else:
-                  print(f"Perdio {segundo_pokemon.get_name()}")
-                  break
-            # daño al primer pokemon
-            tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
-                                                             primer_pokemon.get_type_pokemon(),
-                                                             tabla_efectivida)
-            stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
-            atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
-                                                         stab_segundo_pokemon, segundo_pokemon.get_attack(),
-                                                         primer_pokemon.get_defense())
-            primer_pokemon.set_damages_received(atacar_primer_pokemon)
-            if primer_pokemon.get_hp() > 0:
-                  print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
-            else:
-                  print(f"Perdio {primer_pokemon.get_name()}")
-                  break
-      else:
-            # daño al segundo pokemon
-            tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
-                                                             primer_pokemon.get_type_pokemon(),
-                                                             tabla_efectivida)
-            stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
-            atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
-                                                         stab_segundo_pokemon, segundo_pokemon.get_attack(),
-                                                         primer_pokemon.get_defense())
-            primer_pokemon.set_damages_received(atacar_primer_pokemon)
-            if primer_pokemon.get_hp() > 0:
-                  print(f"{primer_pokemon.get_name()} tiene una vida de {primer_pokemon.get_hp()}")
-            else:
-                  print(f"Perdio {primer_pokemon.get_name()}")
-                  break
+    if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
+        # daño al segundo pokemon
+        tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
+                                                        segundo_pokemon.get_type_pokemon(),
+                                                        tabla_efectivida)
+        stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+        atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
+                                                      primer_pokemon.get_attack(),
+                                                      segundo_pokemon.get_defense())
+        segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
+        if segundo_pokemon.get_hp() > 0:
+            print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
+                  f"{atacar_segundo_pokemon}")
+            print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+        else:
+            print(f"Perdio {segundo_pokemon.get_name()}")
+            break
+        # daño al primer pokemon
+        tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
+                                                         primer_pokemon.get_type_pokemon(),
+                                                         tabla_efectivida)
+        stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
+        atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
+                                                     stab_segundo_pokemon, segundo_pokemon.get_attack(),
+                                                     primer_pokemon.get_defense())
+        primer_pokemon.set_damages_received(atacar_primer_pokemon)
+        if primer_pokemon.get_hp() > 0:
+            print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
+                  f"{atacar_primer_pokemon}")
+            print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
+        else:
+            print(f"Perdio {primer_pokemon.get_name()}")
+            break
+    else:
+        # daño al primer pokemon
+        tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
+                                                         primer_pokemon.get_type_pokemon(),
+                                                         tabla_efectivida)
+        stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
+        atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
+                                                     stab_segundo_pokemon, segundo_pokemon.get_attack(),
+                                                     primer_pokemon.get_defense())
+        primer_pokemon.set_damages_received(atacar_primer_pokemon)
+        if primer_pokemon.get_hp() > 0:
+            print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
+                  f"{atacar_primer_pokemon}")
+            print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
+        else:
+            print(f"Perdio {primer_pokemon.get_name()}")
+            break
 
-            # daño al primer pokemon
-            tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
-                                                            segundo_pokemon.get_type_pokemon(),
-                                                            tabla_efectivida)
-            stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-            atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon,
-                                                          tipo_primer_pokemon, stab_primer_pokemon,
-                                                          primer_pokemon.get_attack(),
-                                                          segundo_pokemon.get_defense())
-            segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
-            if segundo_pokemon.get_hp() > 0:
-                  print(f"{segundo_pokemon.get_name()} tiene una vida de {segundo_pokemon.get_hp()}")
-            else:
-                  print(f"Perdio {segundo_pokemon.get_name()}")
-                  break
+        # daño al segundo pokemon
+        tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
+                                                        segundo_pokemon.get_type_pokemon(),
+                                                        tabla_efectivida)
+        stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
+        atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon,
+                                                      tipo_primer_pokemon, stab_primer_pokemon,
+                                                      primer_pokemon.get_attack(),
+                                                      segundo_pokemon.get_defense())
+        segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
+        if segundo_pokemon.get_hp() > 0:
+            print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
+                  f"{atacar_segundo_pokemon}")
 
-
-
-
-
-
-
-
-
-
-
-
-# prototipo de cambate
-# while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-#       if primer_pokemon.get_velocity() >= segundo_pokemon.get_velocity():
-#             if segundo_pokemon.get_hp() > 0 and primer_pokemon.get_hp() > 1:
-#                   power = informacion_hablidada[1]
-#                   tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
-#                                                            segundo_pokemon.get_type_pokemon(), tabla_efectivida)
-#                   stab = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-#                   atacar_segundo_pokemon = estadisticas.damages(power, tipo_pokemon, stab, primer_pokemon.get_attack(),
-#                                                                 segundo_pokemon.get_defense())
-#                   segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
-#                   if segundo_pokemon.get_hp() >= 0:
-#                         print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de:"
-#                               f"{atacar_segundo_pokemon}")
-#                         print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
-#                   else:
-#                         print("Fin de la batalla")
-#                   power = habilidad_segundo_pokemon[1]
-#                   tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
-#                                                            primer_pokemon.get_type_pokemon(), tabla_efectivida)
-#                   stab = leer.type_attack(segundo_pokemon.get_type_pokemon(), informacion_hablidada[2])
-#                   atacar_primer_pokemon = estadisticas.damages(power, tipo_pokemon, stab, segundo_pokemon.get_attack(),
-#                                                                primer_pokemon.get_defense())
-#                   primer_pokemon.set_damages_received(atacar_primer_pokemon)
-#                   print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
-#                         f"{atacar_primer_pokemon}")
-#                   if primer_pokemon.get_hp() >= 0:
-#                         print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
-#                         print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
-#                   else:
-#                         print("Fin de la batalla")
-#             else:
-#                   break
-#       else:
-#             if primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 1:
-#                   power = habilidad_segundo_pokemon[1]
-#                   tipo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
-#                                                            primer_pokemon.get_type_pokemon(), tabla_efectivida)
-#                   stab = leer.type_attack(segundo_pokemon.get_type_pokemon(), informacion_hablidada[2])
-#                   atacar_primer_pokemon = estadisticas.damages(power, tipo_pokemon, stab, segundo_pokemon.get_attack(),
-#                                                                primer_pokemon.get_defense())
-#                   primer_pokemon.set_damages_received(atacar_primer_pokemon)
-#                   print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
-#                         f"{atacar_primer_pokemon}")
-#                   if primer_pokemon.get_hp() >= 0:
-#                         print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
-#                         print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
-#                   else:
-#                         print("Fin de la batalla")
-#             else:
-#                   power = informacion_hablidada[1]
-#                   tipo_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
-#                                                      segundo_pokemon.get_type_pokemon(), tabla_efectivida)
-#                   stab = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-#                   atacar_segundo_pokemon = estadisticas.damages(power, tipo_pokemon, stab, primer_pokemon.get_attack(),
-#                                                           segundo_pokemon.get_defense())
-#                   segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
-#                   if segundo_pokemon.get_hp() >= 0:
-#                         print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de:"
-#                               f"{atacar_segundo_pokemon}")
-#                         print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
-#                   else:
-#                         print("Fin de la batalla")
-#
-#
-#
-# if primer_pokemon.get_hp() >= 0:
-#       print(f"Gano {primer_pokemon.get_name()} \n ¡HAZ GANADO!")
-# else:
-#       print(f"Gano {segundo_pokemon.get_name()}\n ¡HAZ PERDIDO!")
-
-
-
-
+            print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
+        else:
+            print(f"Perdio {segundo_pokemon.get_name()}")
+            break
 
 
 

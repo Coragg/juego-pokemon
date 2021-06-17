@@ -1,4 +1,4 @@
-#Este archivo sirve para testear las funciones del read document.
+# Este archivo sirve para testear las funciones del read document.
 
 from src.lista_pokemon import read_document as leer
 import unittest
@@ -20,7 +20,8 @@ class TestReadDocument(unittest.TestCase):
 
     def test_cantidad_de_habilidades(self):
         self.assertEqual(leer.cantidad_habilidades(9, data), 4)
-
+        self.assertEqual(leer.cantidad_habilidades(378, data), 98)
+        self.assertEqual(leer.cantidad_habilidades(357, data), 109)
 
 if __name__ == "__main__":
     unittest.main()
