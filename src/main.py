@@ -173,7 +173,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_primer_pokemon}")
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
         else:
-            print(f"Perdio {primer_pokemon.get_name()}")
+            print(f"Perdio {primer_pokemon.get_name()} y gano {segundo_pokemon.get_name()}")
             break
 
         # daño al segundo pokemon
@@ -192,5 +192,5 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
 
             print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
         else:
-            print(f"Perdio {segundo_pokemon.get_name()}")
+            print(f"Perdio {segundo_pokemon.get_name()} y gano {primer_pokemon.get_name()}")
             break
