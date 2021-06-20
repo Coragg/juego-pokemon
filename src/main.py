@@ -59,7 +59,7 @@ print("\nMovimientos que puede aprender el pokémon: ")
 leer.mostrar_habilidad(search_pokemon, data_pokemon)
 
 
-seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
+seleccionar_ataque = int(input("Seleccione numero del ataque a ejecutar: "))
 cantidad_habilidades = leer.cantidad_habilidades(search_pokemon, data_pokemon)
 while seleccionar_ataque <= -1 or seleccionar_ataque > cantidad_habilidades:
     seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
