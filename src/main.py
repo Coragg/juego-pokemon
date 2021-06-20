@@ -8,6 +8,9 @@ from datos_pokemo import estadisticas
 from movimiento import moves
 import random
 
+print(moves.get_move("acidarmor"))
+print(moves.get_move("acupressure"))
+print(moves.get_move("attract"))
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
@@ -131,9 +134,12 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                                                         segundo_pokemon.get_type_pokemon(),
                                                         tabla_efectivida)
         stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-        atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon, tipo_primer_pokemon, stab_primer_pokemon,
-                                                      primer_pokemon.get_attack(),
-                                                      segundo_pokemon.get_defense())
+        atacar_segundo_pokemon = estadisticas.ataque_especial_o_ataque_fisico(informacion_hablidada,
+                                                                              tipo_primer_pokemon, stab_primer_pokemon,
+                                                                              primer_pokemon.get_attack(),
+                                                                              segundo_pokemon.get_defense(),
+                                                                              primer_pokemon.get_special_attack(),
+                                                                              segundo_pokemon.get_special_defense())
         segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
         if segundo_pokemon.get_hp() > 0:
             print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "
@@ -147,9 +153,13 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                                                          primer_pokemon.get_type_pokemon(),
                                                          tabla_efectivida)
         stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
-        atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
-                                                     stab_segundo_pokemon, segundo_pokemon.get_attack(),
-                                                     primer_pokemon.get_defense())
+        atacar_primer_pokemon = estadisticas.ataque_especial_o_ataque_fisico(habilidad_segundo_pokemon,
+                                                                             tipo_segundo_pokemon,
+                                                                             stab_segundo_pokemon,
+                                                                             segundo_pokemon.get_attack(),
+                                                                             primer_pokemon.get_defense(),
+                                                                             segundo_pokemon.get_special_attack(),
+                                                                             primer_pokemon.get_special_defense())
         primer_pokemon.set_damages_received(atacar_primer_pokemon)
         if primer_pokemon.get_hp() > 0:
             print(f"El daño que realizó  {segundo_pokemon.get_name()} a {primer_pokemon.get_name()} fue de: "
@@ -164,7 +174,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                                                          primer_pokemon.get_type_pokemon(),
                                                          tabla_efectivida)
         stab_segundo_pokemon = leer.type_attack(segundo_pokemon.get_type_pokemon(), habilidad_segundo_pokemon[2])
-        atacar_primer_pokemon = estadisticas.damages(power_segundo_pokemon, tipo_segundo_pokemon,
+        atacar_primer_pokemon = estadisticas.damages(habilidad_segundo_pokemon, tipo_segundo_pokemon,
                                                      stab_segundo_pokemon, segundo_pokemon.get_attack(),
                                                      primer_pokemon.get_defense())
         primer_pokemon.set_damages_received(atacar_primer_pokemon)
@@ -181,10 +191,13 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                                                         segundo_pokemon.get_type_pokemon(),
                                                         tabla_efectivida)
         stab_primer_pokemon = leer.type_attack(primer_pokemon.get_type_pokemon(), informacion_hablidada[2])
-        atacar_segundo_pokemon = estadisticas.damages(power_primer_pokemon,
-                                                      tipo_primer_pokemon, stab_primer_pokemon,
-                                                      primer_pokemon.get_attack(),
-                                                      segundo_pokemon.get_defense())
+        atacar_segundo_pokemon = estadisticas.ataque_especial_o_ataque_fisico(informacion_hablidada,
+                                                                              tipo_primer_pokemon,
+                                                                              stab_primer_pokemon,
+                                                                              primer_pokemon.get_attack(),
+                                                                              segundo_pokemon.get_defense(),
+                                                                              primer_pokemon.get_special_attack(),
+                                                                              segundo_pokemon.get_special_defense())
         segundo_pokemon.set_damages_received(atacar_segundo_pokemon)
         if segundo_pokemon.get_hp() > 0:
             print(f"El daño que realizó  {primer_pokemon.get_name()} a {segundo_pokemon.get_name()} fue de: "

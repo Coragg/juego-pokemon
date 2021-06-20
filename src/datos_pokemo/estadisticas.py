@@ -1,4 +1,4 @@
-#Este archivo contiene las ecuaciones para el desarrollo del ataque.
+# Este archivo contiene las ecuaciones para el desarrollo del ataque.
 
 import random
 import math
@@ -24,3 +24,11 @@ def damages(power, type_pokemon, stab, attack, enemy_defense):
     level = 50
     use_modifier = modifier(type_pokemon, stab)
     return (((((2 * level) / 5) + 2) * power * (attack / enemy_defense) / 50) + 2) * use_modifier
+
+
+def ataque_especial_o_ataque_fisico(power, type_pokemon, stab, attack, enemy_defense, special_attack,
+                                    enemy_special_defense):
+    if power[3] == 'special':
+        return damages(power[1], type_pokemon, stab, special_attack, enemy_special_defense)
+    elif power[3] == 'physical' or power[3] == 'status':
+        return damages(power[1], type_pokemon, stab, attack, enemy_defense)
