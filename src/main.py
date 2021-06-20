@@ -8,9 +8,6 @@ from datos_pokemo import estadisticas
 from movimiento import moves
 import random
 
-print(moves.get_move("acidarmor"))
-print(moves.get_move("acupressure"))
-print(moves.get_move("attract"))
 print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
       ":::::::::::::::::::::::::::::::::::::")
 print("::Bienvenido al simulador de combate pokemon profesional, aquí podra probar los daños que llegaria a hacer un "
@@ -146,7 +143,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_segundo_pokemon}")
             print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
         else:
-            print(f"Perdio {segundo_pokemon.get_name()}")
+            print(f"Perdio {segundo_pokemon.get_name()} y ganaste con {primer_pokemon.get_name()}")
             break
         # daño al primer pokemon
         tipo_segundo_pokemon = leer.analizar_efectividad(segundo_pokemon.get_type_pokemon(),
@@ -166,7 +163,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_primer_pokemon}")
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
         else:
-            print(f"Perdio {primer_pokemon.get_name()}")
+            print(f"Perdiste con {primer_pokemon.get_name()} y gano {segundo_pokemon.get_name()}")
             break
     else:
         # daño al primer pokemon
@@ -186,7 +183,7 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
                   f"{atacar_primer_pokemon}")
             print(f"{primer_pokemon.get_name()} quedó con un hp de: {primer_pokemon.get_hp()}")
         else:
-            print(f"Perdio {primer_pokemon.get_name()} y gano {segundo_pokemon.get_name()}")
+            print(f"Perdiste con {primer_pokemon.get_name()} y gano {segundo_pokemon.get_name()}")
             break
 
         # daño al segundo pokemon
@@ -208,5 +205,5 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
 
             print(f"{segundo_pokemon.get_name()} quedó con un hp de: {segundo_pokemon.get_hp()}")
         else:
-            print(f"Perdio {segundo_pokemon.get_name()} y gano {primer_pokemon.get_name()}")
+            print(f"Perdio {segundo_pokemon.get_name()} y ganaste con {primer_pokemon.get_name()}")
             break
