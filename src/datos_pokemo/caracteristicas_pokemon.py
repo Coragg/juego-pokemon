@@ -1,5 +1,3 @@
-#
-
 class CaracteristicasPokemon:
     name: str
     class_pokemon: str
