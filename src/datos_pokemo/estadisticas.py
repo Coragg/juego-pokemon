@@ -30,5 +30,5 @@ def ataque_especial_o_ataque_fisico(power, type_pokemon, stab, attack, enemy_def
                                     enemy_special_defense):
     if power[3] == 'special' or power[3] == 'status':
         return damages(power[1], type_pokemon, stab, special_attack, enemy_special_defense)
-    elif power[3] == 'physical' :
+    elif power[3] == 'physical':
         return damages(power[1], type_pokemon, stab, attack, enemy_defense)

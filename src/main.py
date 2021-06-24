@@ -55,15 +55,15 @@ print("\tVelociodad =", primer_pokemon.get_velocity())
 print("\nMovimientos que puede aprender el pokémon: ")
 leer.mostrar_habilidad(search_pokemon, data_pokemon)
 
-
-seleccionar_ataque = int(input("Seleccione numero del ataque a ejecutar: "))
+seleccionar_ataque = int(input("Seleccione número del ataque a ejecutar: "))
 cantidad_habilidades = leer.cantidad_habilidades(search_pokemon, data_pokemon)
 while seleccionar_ataque <= -1 or seleccionar_ataque > cantidad_habilidades:
-    seleccionar_ataque = int(input("Seleccione un ataque a ejecutar: "))
+    seleccionar_ataque = int(input("Seleccione número del ataque a ejecutar: "))
 nombre_hablidad_elegida = leer.buscar_habilidad_seleccionada(search_pokemon, seleccionar_ataque, data_pokemon)
 informacion_hablidada = moves.get_move(nombre_hablidad_elegida)
 
 print(f"El ataque seleccionado es:  {nombre_hablidad_elegida}")
+print(f"Poder de ataque es: {informacion_hablidada[1]}")
 
 amplified_life = estadisticas.health_point(int(primer_pokemon.get_hp()))
 primer_pokemon.set_hp(amplified_life)
@@ -110,22 +110,29 @@ segundo_pokemon.set_special_defense(special_defense_amplified)
 velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity()))
 segundo_pokemon.set_velocity(velocity_amplified)
 
-
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
 random_select = random.randrange(0, cantidad_habilidades_aleatorio)
 name_hability_segundo_pokemon = leer.buscar_habilidad_seleccionada(search_second_pokemon, random_select, data_pokemon)
 
 habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 
-
-print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
-print(f"El atk al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_attack()}")
-print(f"El def al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_defense()}")
-print(f"El spa al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_special_attack()}")
-print(f"El spd al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_special_defense()}")
-print(f"El spe al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_velocity()}")
-power_primer_pokemon = informacion_hablidada[1]
-power_segundo_pokemon = habilidad_segundo_pokemon[1]
+print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+      f"es {segundo_pokemon.get_hp()}")
+print(
+    f"El atk al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+    f"es {segundo_pokemon.get_attack()}")
+print(
+    f"El def al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+    f"es {segundo_pokemon.get_defense()}")
+print(
+    f"El spa al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+    f"es {segundo_pokemon.get_special_attack()}")
+print(
+    f"El spd al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+    f"es {segundo_pokemon.get_special_defense()}")
+print(
+    f"El spe al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
+    f"es {segundo_pokemon.get_velocity()}")
 
 # tercer prototipo de combate
 print("-----------------------------Empieza el combate-----------------------------")
