@@ -119,11 +119,16 @@ habilidad_segundo_pokemon = moves.get_move(name_hability_segundo_pokemon)
 
 
 print(f"El hp al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_hp()}")
+print(f"El atk al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_attack()}")
+print(f"El def al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_defense()}")
+print(f"El spa al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_special_attack()}")
+print(f"El spd al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_special_defense()}")
+print(f"El spe al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} es {segundo_pokemon.get_velocity()}")
 power_primer_pokemon = informacion_hablidada[1]
 power_segundo_pokemon = habilidad_segundo_pokemon[1]
 
 # tercer prototipo de combate
-
+print("-----------------------------Empieza el combate-----------------------------")
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
     if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
         # daño al segundo pokemon
