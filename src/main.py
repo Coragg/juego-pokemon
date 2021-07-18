@@ -50,7 +50,7 @@ print("\tAtaque =", primer_pokemon.get_attack())
 print("\tDefensa = ", primer_pokemon.get_defense())
 print("\tAtaque especial =", primer_pokemon.get_special_attack())
 print("\tDefensa especial =", primer_pokemon.get_special_defense())
-print("\tVelociodad =", primer_pokemon.get_velocity())
+print("\tVelociodad =", primer_pokemon.get_speed())
 
 print("\nMovimientos que puede aprender el pokémon: ")
 leer.mostrar_habilidad(search_pokemon, data_pokemon)
@@ -82,9 +82,9 @@ amplified_special_defense = estadisticas.other_stat(int(primer_pokemon.get_speci
 primer_pokemon.set_special_defense(amplified_special_defense)
 print(f"El spd al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es "
       f"{primer_pokemon.get_special_defense()}")
-amplified_velocity = estadisticas.other_stat(int(primer_pokemon.get_velocity()))
-primer_pokemon.set_velocity(amplified_velocity)
-print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_velocity()}")
+amplified_velocity = estadisticas.other_stat(int(primer_pokemon.get_speed()))
+primer_pokemon.set_speed(amplified_velocity)
+print(f"El spe al nivel {primer_pokemon.get_level()} de {primer_pokemon.get_name()} es {primer_pokemon.get_speed()}")
 
 # Pokemon a enfrentar
 segundo_poke = input("\nIngrese el nombre del Pokémon a atacar: ")
@@ -107,8 +107,8 @@ special_attack_amplified = estadisticas.other_stat(int(segundo_pokemon.get_speci
 segundo_pokemon.set_special_attack(special_attack_amplified)
 special_defense_amplified = estadisticas.other_stat(int(segundo_pokemon.get_special_defense()))
 segundo_pokemon.set_special_defense(special_defense_amplified)
-velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_velocity()))
-segundo_pokemon.set_velocity(velocity_amplified)
+velocity_amplified = estadisticas.other_stat(int(segundo_pokemon.get_speed()))
+segundo_pokemon.set_speed(velocity_amplified)
 
 cantidad_habilidades_aleatorio = leer.cantidad_habilidades(search_second_pokemon, data_pokemon)
 random_select = random.randrange(0, cantidad_habilidades_aleatorio)
@@ -132,12 +132,12 @@ print(
     f"es {segundo_pokemon.get_special_defense()}")
 print(
     f"El spe al nivel {segundo_pokemon.get_level()} de {segundo_pokemon.get_name()} "
-    f"es {segundo_pokemon.get_velocity()}")
+    f"es {segundo_pokemon.get_speed()}")
 
 # tercer prototipo de combate
 print("-----------------------------Empieza el combate-----------------------------")
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
-    if primer_pokemon.get_velocity() > segundo_pokemon.get_velocity():
+    if primer_pokemon.get_speed() > segundo_pokemon.get_speed():
         # daño al segundo pokemon
         tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
                                                         segundo_pokemon.get_type_pokemon(),

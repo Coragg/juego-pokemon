@@ -5,7 +5,7 @@ class CaracteristicasPokemon:
     attack: eval
     special_attack: int
     level = 50
-    velocity: eval
+    speed: eval
     defense: eval
     special_defense: eval
 
@@ -36,11 +36,11 @@ class CaracteristicasPokemon:
     def get_type_pokemon(self):
         return self.class_pokemon
 
-    def set_velocity(self, velocity):
-        self.velocity = velocity
+    def set_speed(self, velocity):
+        self.speed = velocity
 
-    def get_velocity(self):
-        return self.velocity
+    def get_speed(self):
+        return self.speed
 
     def set_defense(self, defending):
         self.defense = defending
@@ -71,4 +71,4 @@ class CaracteristicasPokemon:
         self.set_defense(list_of_data[ruta][4])
         self.set_special_attack(list_of_data[ruta][5])
         self.set_special_defense(list_of_data[ruta][6])
-        self.set_velocity(list_of_data[ruta][7])
+        self.set_speed(list_of_data[ruta][7])
