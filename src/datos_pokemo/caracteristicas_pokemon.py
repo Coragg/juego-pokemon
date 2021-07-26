@@ -1,8 +1,8 @@
 class CaracteristicasPokemon:
     def __init__(self):
-        self.name = None
-        self.class_pokemon = str()
-        self.hp = None
+        self.name = str
+        self.class_pokemon = str
+        self.hp = eval
         self.attack = eval
         self.special_attack = int
         self.level = 50
