@@ -136,7 +136,9 @@ print(
 
 # tercer prototipo de combate
 print("-----------------------------Empieza el combate-----------------------------")
+ronda = 1
 while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
+    print(f'Ronda de combate N° {ronda}: ')
     if primer_pokemon.get_speed() > segundo_pokemon.get_speed():
         # daño al segundo pokemon
         tipo_primer_pokemon = leer.analizar_efectividad(primer_pokemon.get_type_pokemon(),
@@ -219,3 +221,4 @@ while primer_pokemon.get_hp() > 0 and segundo_pokemon.get_hp() > 0:
         else:
             print(f"\nPerdio {segundo_pokemon.get_name()} y ganaste con {primer_pokemon.get_name()}")
             break
+    ronda += 1

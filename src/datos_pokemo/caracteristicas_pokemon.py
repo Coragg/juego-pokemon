@@ -1,13 +1,14 @@
 class CaracteristicasPokemon:
-    name: str
-    class_pokemon: str
-    hp: eval
-    attack: eval
-    special_attack: int
-    level = 50
-    speed: eval
-    defense: eval
-    special_defense: eval
+    def __init__(self):
+        self.name = None
+        self.class_pokemon = str()
+        self.hp = None
+        self.attack = eval
+        self.special_attack = int
+        self.level = 50
+        self.speed = eval
+        self.defense = eval
+        self.special_defense = eval
 
     def set_hp(self, health_point):
         self.hp = health_point
