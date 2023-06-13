@@ -51,6 +51,6 @@ def type_attack(type_pokemon, tipo_ataque):
 def cantidad_habilidades(pokemon_position, lista: list):
     cut = lista[pokemon_position][8].split(sep=";")
     contar = 0
-    for recorer in cut:
+    for _ in cut:
         contar += 1
     return contar - 1
